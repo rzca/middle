@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Map, Marker } from "pigeon-maps"
+import { Map, Marker, ZoomControl } from "pigeon-maps"
 import { default as permits } from "./data/geocodedpermits.json"
 import "./App.css";
 
@@ -30,6 +30,7 @@ export const App = () => {
     }
     catch (err) {
       console.log(err);
+      setErrorString("failed to parse data");
     }
   }, []);
 
@@ -42,10 +43,11 @@ export const App = () => {
         {geocodedPermits && geocodedPermits.map(p => {
           return <Marker
             anchor={[p.location?.longitude, p.location?.latitude]}
-            onMouseOver={e => setActivePermit(p)}
-            onMouseOut={e => setActivePermit(null)}
+            onMouseOver={_ => setActivePermit(p)}
+            onMouseOut={_ => setActivePermit(null)}
           ></Marker>
         })}
+        <ZoomControl />
       </Map>
       {activePermit && <div>
         <div>{activePermit.permit.address}</div>
