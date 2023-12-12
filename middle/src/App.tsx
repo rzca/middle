@@ -1,9 +1,27 @@
 import { useEffect, useState } from "react";
+import "leaflet/dist/leaflet.css";
+import 'leaflet/dist/images/marker-icon-2x.png'
+import "leaflet/dist/images/marker-icon.png"
+import "leaflet/dist/images/marker-shadow.png"
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "./App.css";
-import "leaflet/dist/leaflet.css";
 
 import { default as permits } from "./data/geocodedpermits.json";
+
+// https://github.com/Leaflet/Leaflet/issues/4968#issuecomment-264311098
+import icon from 'leaflet/dist/images/marker-icon.png';
+import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+
+import L from 'leaflet';
+
+const DefaultIcon = L.icon({
+   iconUrl: icon,
+   shadowUrl: iconShadow,
+   iconSize: [24,36],
+   iconAnchor: [12,36]
+ });
+
+ L.Marker.prototype.options.icon = DefaultIcon; 
 
 type Permit = {
   status: string;
@@ -43,7 +61,7 @@ export const App = () => {
           center={[38.89, -77.11]}
           zoom={11}
           scrollWheelZoom={true}
-          style={{ height: "80vh", width: "100vh" }}
+          style={{ margin: "auto", height: "80vh", width: "85vw", maxWidth: "1200px"}}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -52,25 +70,19 @@ export const App = () => {
           {geocodedPermits &&
             geocodedPermits.map((p) => {
               return (
-                <div
-                  // onMouseOver={(_) => setActivePermit(p)}
-                  // onMouseOut={(_) => setActivePermit(null)}
-                  onClick={(_) => setActivePermit(p)}
-                >
                   <Marker
                     position={[p.location.longitude, p.location.latitude]}
                     eventHandlers={{
                       mouseover: (_) => setActivePermit(p),
                     }}
+                    key={p.permit.address}
                   >
-                    <div>{p.permit.address}</div>
                     <Popup>
                       <div>{p.permit.address}</div>
                       <div>{p.permit.units + " units"}</div>
                       <div>{p.permit.status}</div>
                     </Popup>
                   </Marker>
-                </div>
               );
             })}
         </MapContainer>
