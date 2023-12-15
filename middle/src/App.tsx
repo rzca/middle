@@ -13,8 +13,7 @@ import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import L from "leaflet";
 import { Section } from "@blueprintjs/core";
 
-const ActiveIcon = L.icon({
-  // iconUrl: icon,
+const activeIcon = L.icon({
   iconUrl:
     "https://mapmarker.io/api/v3/font-awesome/v6/pin?icon=fa-solid%20fa-house&size=75&color=FFF&background=e97451&hoffset=0&voffset=0",
   shadowUrl: iconShadow,
@@ -22,16 +21,14 @@ const ActiveIcon = L.icon({
   iconAnchor: [12, 36],
 });
 
-const DefaultIcon = L.icon({
-  // iconUrl: icon,
+const defaultIcon = L.icon({
   iconUrl:
     "https://mapmarker.io/api/v3/font-awesome/v6/pin?icon=fa-solid%20fa-house&size=75&color=FFF&background=003e77&hoffset=0&voffset=0",
   shadowUrl: iconShadow,
   iconSize: [30, 40],
   iconAnchor: [12, 36],
 });
-L.Marker.prototype.options.icon = DefaultIcon;
-// end hacks
+L.Marker.prototype.options.icon = defaultIcon;
 
 type Permit = {
   status: string;
@@ -49,9 +46,7 @@ export const App = () => {
   permits satisfies GeocodedPermit[];
 
   const [activePermit, setActivePermit] = useState<GeocodedPermit | null>(null);
-  const [geocodedPermits, setGeocodedPermits] = useState<
-    GeocodedPermit[] | null
-  >(null);
+  const [geocodedPermits, setGeocodedPermits] = useState<GeocodedPermit[] | null>(null);
   const [errorString, setErrorString] = useState<string | null>(null);
 
   useEffect(() => {
@@ -89,8 +84,8 @@ export const App = () => {
               <Marker
                 icon={
                   p.permit.address === activePermit?.permit.address
-                    ? ActiveIcon
-                    : DefaultIcon
+                    ? activeIcon
+                    : defaultIcon
                 }
                 position={[p.location.longitude, p.location.latitude]}
                 eventHandlers={{
@@ -137,7 +132,6 @@ export const App = () => {
                   <tr onMouseOver={(_) => setActivePermit(p)}>
                     <td>{p.permit.address}</td>
                     <td>{p.permit.units}</td>
-                    <td>{}</td>
                     <td>{p.permit.status}</td>
                   </tr>
                 ))}
