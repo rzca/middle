@@ -1,17 +1,9 @@
 // import { GeocodedPermit } from "../shared/types";
-import { default as permits } from "../data/geocodedpermits.json" assert { type: "json" };
+import { default as permits } from "../data/permits.json" assert { type: "json" };
 // import { default as permitsWithAssessments } from "../data/assessments.json";
 import { JSDOM } from 'jsdom';
-import { Location, Permit } from "../shared/types";
+import { Location, Permit, Assessment } from "../shared/types";
 import { default as fs } from "fs/promises";
-
-interface Assessment {
-    address: string,
-    assessedValue2023: number,
-    taxDue: string,
-    taxPaymentStatus: string,
-    lastSale: string
-}
 
 const getAssessment = async (streetNumber?: string, streetName?: string, direction?: "N" | "S", streetType?: string) => {
     const xx = await fetch("https://propertysearch.arlingtonva.us/Home/Search", {
@@ -33,23 +25,15 @@ const getAssessment = async (streetNumber?: string, streetName?: string, directi
         "mode": "cors"
     }).then(res => res.blob())
         .then(blob => blob.text());
-    // .then(data => console.log(data));
-
-    // return xx;
-
-
     const dom = new JSDOM(xx);
 
-    const zz = Array.from(dom.window.document.querySelectorAll("table:nth-of-type(1) > tbody > tr")).slice(1);
+    const rows = Array.from(dom.window.document.querySelectorAll("table:nth-of-type(1) > tbody > tr")).slice(1);
 
     // assert we have two trs: one for the headers and one for the data
-    const assessments: Assessment[] = zz.map(tr => {
-        const ss = tr.children.item(3)?.textContent!.replace("$", "").replaceAll(",", "");
-        console.log(ss);
-
+    const assessments: Assessment[] = rows.map(tr => {
         return {
             address: tr.children.item(2)?.textContent!,
-            assessedValue2023: parseFloat(tr.children.item(3)?.textContent!.replace("$", "").replace(",", "")!),
+            assessedValue2023: parseFloat(tr.children.item(3)?.textContent!.replace("$", "").replaceAll(",", "")!),
             taxDue: tr.children.item(4)?.textContent!,
             taxPaymentStatus: tr.children.item(5)?.textContent!,
             lastSale: tr.children.item(6)?.textContent!
@@ -59,8 +43,6 @@ const getAssessment = async (streetNumber?: string, streetName?: string, directi
 }
 
 const newPermits: { permit: Permit, location?: Location, assessment?: Assessment }[] = [];
-
-await getAssessment();
 
 const getType = (address: string): "ST" | "DR" | "RD" | "CT" | undefined => {
     if (address.toLowerCase().includes("street")) return "ST";
@@ -95,7 +77,7 @@ for (const permit of permits) {
     }
 }
 
-await fs.writeFile('./src/data/geocodedPermits.json', JSON.stringify(newPermits, null, 2), 'utf8');
+await fs.writeFile('./src/data/permits.json', JSON.stringify(newPermits, null, 2), 'utf8');
 
 // const ss = await getAssessment("2909", "2ND", "N", "RD");
 // console.log(ss);

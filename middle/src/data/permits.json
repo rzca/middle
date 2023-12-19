@@ -2,27 +2,6 @@
   {
     "permit": {
       "status": "Approved",
-      "address": "2005 N. Taylor Street",
-      "units": 3,
-      "zip": 22207
-    },
-    "location": {
-      "latitude": -77.11322323183396,
-      "longitude": 38.895411423883125
-    },
-    "assessment": {
-      "rpc": "sdf",
-      "owner": "sdf",
-      "address": "sdf",
-      "assessedValue2023": 200.10,
-      "taxDue": "sdf",
-      "taxPaymentStatus": "sdf",
-      "lastSale": "sdf"
-    }
-  },
-  {
-    "permit": {
-      "status": "Approved",
       "address": "5041 25th Street S.",
       "units": 2,
       "zip": 22206
@@ -30,6 +9,13 @@
     "location": {
       "latitude": -77.13196110703716,
       "longitude": 38.89922068481843
+    },
+    "assessment": {
+      "address": "5041 25th ST S",
+      "assessedValue2023": 658700,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "11/2/2023"
     }
   },
   {
@@ -42,6 +28,13 @@
     "location": {
       "latitude": -77.05527256068297,
       "longitude": 38.85005167145353
+    },
+    "assessment": {
+      "address": "2612 S FERN ST",
+      "assessedValue2023": 974600,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "4/10/2023"
     }
   },
   {
@@ -90,6 +83,13 @@
     "location": {
       "latitude": -77.10087939258833,
       "longitude": 38.863449082871924
+    },
+    "assessment": {
+      "address": "4019 7th ST S",
+      "assessedValue2023": 682600,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "12/2/2022"
     }
   },
   {
@@ -102,6 +102,13 @@
     "location": {
       "latitude": -77.12175450346874,
       "longitude": 38.85925966229667
+    },
+    "assessment": {
+      "address": "644 S ILLINOIS ST",
+      "assessedValue2023": 805900,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "6/8/2023"
     }
   },
   {
@@ -114,6 +121,13 @@
     "location": {
       "latitude": -77.10026510967096,
       "longitude": 38.89200034045049
+    },
+    "assessment": {
+      "address": "1816 N JACKSON ST",
+      "assessedValue2023": 1017900,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "4/6/2023"
     }
   },
   {
@@ -126,6 +140,13 @@
     "location": {
       "latitude": -77.11411079574275,
       "longitude": 38.88598067683682
+    },
+    "assessment": {
+      "address": "1227 N UTAH ST",
+      "assessedValue2023": 931400,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "8/5/2016"
     }
   },
   {
@@ -150,6 +171,13 @@
     "location": {
       "latitude": -77.06178851846474,
       "longitude": 38.85409248195429
+    },
+    "assessment": {
+      "address": "921 22nd ST S",
+      "assessedValue2023": 1000800,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "7/12/2023"
     }
   },
   {
@@ -162,6 +190,13 @@
     "location": {
       "latitude": -77.09123116283028,
       "longitude": 38.87730377836847
+    },
+    "assessment": {
+      "address": "2909 2nd RD N",
+      "assessedValue2023": 1222600,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "3/13/2023"
     }
   },
   {
@@ -174,6 +209,13 @@
     "location": {
       "latitude": -77.12844494798698,
       "longitude": 38.87479712508186
+    },
+    "assessment": {
+      "address": "5630 8th ST N",
+      "assessedValue2023": 829700,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "5/15/2023"
     }
   },
   {
@@ -186,6 +228,13 @@
     "location": {
       "latitude": -77.1064947238499,
       "longitude": 38.888284564424765
+    },
+    "assessment": {
+      "address": "3802 14th ST N",
+      "assessedValue2023": 955000,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "7/13/2021"
     }
   },
   {
@@ -198,6 +247,13 @@
     "location": {
       "latitude": -77.15467026163584,
       "longitude": 38.888666728921784
+    },
+    "assessment": {
+      "address": "6410 22nd ST N",
+      "assessedValue2023": 956100,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "6/7/2021"
     }
   },
   {
@@ -210,6 +266,13 @@
     "location": {
       "latitude": -77.10151699288373,
       "longitude": 38.879544185714565
+    },
+    "assessment": {
+      "address": "629 N MONROE ST",
+      "assessedValue2023": 1153400,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "7/20/2023"
     }
   },
   {
@@ -222,6 +285,13 @@
     "location": {
       "latitude": -77.15441402183434,
       "longitude": 38.88645795676943
+    },
+    "assessment": {
+      "address": "1907 N ROOSEVELT ST",
+      "assessedValue2023": 799600,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "6/26/2019"
     }
   },
   {
@@ -234,6 +304,13 @@
     "location": {
       "latitude": -77.1008488072026,
       "longitude": 38.85317834320084
+    },
+    "assessment": {
+      "address": "4229 16th ST S",
+      "assessedValue2023": 787100,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "10/6/2023"
     }
   },
   {
@@ -246,6 +323,13 @@
     "location": {
       "latitude": -77.09082457284634,
       "longitude": 38.8846856658936
+    },
+    "assessment": {
+      "address": "1004 N DANIEL ST",
+      "assessedValue2023": 1190400,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "4/18/2023"
     }
   },
   {
@@ -258,6 +342,13 @@
     "location": {
       "latitude": -77.08382637582453,
       "longitude": 38.89849796956928
+    },
+    "assessment": {
+      "address": "2129 N TROY ST",
+      "assessedValue2023": 878200,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "1/17/2023"
     }
   },
   {
@@ -270,6 +361,13 @@
     "location": {
       "latitude": -77.11267893904684,
       "longitude": 38.85300733627215
+    },
+    "assessment": {
+      "address": "1052 S EDISON ST",
+      "assessedValue2023": 672200,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "2/8/2022"
     }
   },
   {
@@ -282,6 +380,13 @@
     "location": {
       "latitude": -77.06329248730268,
       "longitude": 38.854661802028424
+    },
+    "assessment": {
+      "address": "2108 S JOYCE ST",
+      "assessedValue2023": 972100,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "11/21/2011"
     }
   },
   {
@@ -306,6 +411,13 @@
     "location": {
       "latitude": -77.08723320915793,
       "longitude": 38.88075161229324
+    },
+    "assessment": {
+      "address": "703 N BARTON ST",
+      "assessedValue2023": 1021800,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "6/1/2022"
     }
   },
   {
@@ -318,6 +430,13 @@
     "location": {
       "latitude": -77.09193587104666,
       "longitude": 38.87258477191245
+    },
+    "assessment": {
+      "address": "12 S HIGHLAND ST",
+      "assessedValue2023": 776700,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "4/11/2023"
     }
   },
   {
@@ -330,6 +449,13 @@
     "location": {
       "latitude": -77.10068319937405,
       "longitude": 38.87660238723735
+    },
+    "assessment": {
+      "address": "432 N MONROE ST",
+      "assessedValue2023": 1078400,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "4/4/2012"
     }
   },
   {
@@ -342,6 +468,13 @@
     "location": {
       "latitude": -77.0934969311431,
       "longitude": 38.865658551720784
+    },
+    "assessment": {
+      "address": "3411 7th ST S",
+      "assessedValue2023": 921100,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "11/30/2021"
     }
   },
   {
@@ -354,6 +487,13 @@
     "location": {
       "latitude": -77.11040288522899,
       "longitude": 38.88992823384846
+    },
+    "assessment": {
+      "address": "1524 N RANDOLPH ST",
+      "assessedValue2023": 1495400,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Deferral",
+      "lastSale": "4/4/1989"
     }
   },
   {
@@ -366,6 +506,13 @@
     "location": {
       "latitude": -77.13977625221719,
       "longitude": 38.89377140530589
+    },
+    "assessment": {
+      "address": "5617 23rd ST N",
+      "assessedValue2023": 905300,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "4/14/2023"
     }
   },
   {
@@ -378,6 +525,13 @@
     "location": {
       "latitude": -77.11844933348101,
       "longitude": 38.891363837947516
+    },
+    "assessment": {
+      "address": "4610 17th ST N",
+      "assessedValue2023": 957200,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "8/30/2022"
     }
   },
   {
@@ -390,6 +544,13 @@
     "location": {
       "latitude": -77.08487602553288,
       "longitude": 38.89577154970652
+    },
+    "assessment": {
+      "address": "2111 N UHLE ST",
+      "assessedValue2023": 971000,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "3/23/2023"
     }
   },
   {
@@ -402,6 +563,13 @@
     "location": {
       "latitude": -77.09366029569696,
       "longitude": 38.88091583582789
+    },
+    "assessment": {
+      "address": "3014 7th ST N",
+      "assessedValue2023": 2393300,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "9/27/2023"
     }
   },
   {
@@ -414,6 +582,13 @@
     "location": {
       "latitude": -77.09349671270246,
       "longitude": 38.879722074284494
+    },
+    "assessment": {
+      "address": "520 N GARFIELD ST",
+      "assessedValue2023": 1274100,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "9/14/2020"
     }
   },
   {
@@ -438,6 +613,13 @@
     "location": {
       "latitude": -77.08662430068728,
       "longitude": 38.89622836545168
+    },
+    "assessment": {
+      "address": "1922 N VEITCH ST",
+      "assessedValue2023": 768600,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "9/1/2023"
     }
   },
   {
@@ -450,6 +632,13 @@
     "location": {
       "latitude": -77.10189457288459,
       "longitude": 38.901737203082476
+    },
+    "assessment": {
+      "address": "2400 N LINCOLN ST",
+      "assessedValue2023": 1096400,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "1/2/2019"
     }
   }
 ]

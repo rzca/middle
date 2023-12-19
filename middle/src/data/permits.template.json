@@ -1,0 +1,23 @@
+[
+    {
+        "permit": {
+            "status": "Approved",
+            "address": "2005 N. Taylor Street",
+            "units": 3,
+            "zip": 22207
+        },
+        "location": {
+            "latitude": -77.11322323183396,
+            "longitude": 38.895411423883125
+        },
+        "assessment": {
+            "rpc": "sdf",
+            "owner": "sdf",
+            "address": "sdf",
+            "assessedValue2023": 200.10,
+            "taxDue": "sdf",
+            "taxPaymentStatus": "sdf",
+            "lastSale": "sdf"
+        }
+    }
+]

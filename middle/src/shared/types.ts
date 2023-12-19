@@ -15,3 +15,11 @@ export type GeocodedPermit = {
     permit: Permit;
     location: Location;
 };
+
+export interface Assessment {
+    address: string,
+    assessedValue2023: number,
+    taxDue: string,
+    taxPaymentStatus: string,
+    lastSale: string
+}

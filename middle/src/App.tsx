@@ -3,7 +3,7 @@ import "leaflet/dist/leaflet.css";
 import { MapContainer, Marker, Popup, TileLayer, GeoJSON, LayersControl } from "react-leaflet";
 import "./App.css";
 
-import { default as permits } from "./data/geocodedpermits.json";
+import { default as permits } from "./data/permits.json";
 import { default as arlington } from "./data/arlington.json";
 
 // these are some hacks to get markers to show up correctly in leaflet
@@ -129,6 +129,10 @@ export const App = () => {
                 <div>{p.permit.address}</div>
                 <div>{p.permit.units + " units"}</div>
                 <div>{p.permit.status}</div>
+                {p.assessment && <div>{Intl.NumberFormat('en-US', {
+                  style: 'currency',
+                  currency: 'USD',
+                }).format(p.assessment.assessedValue2023)}</div>}
               </Popup>
             </Marker>
           );
