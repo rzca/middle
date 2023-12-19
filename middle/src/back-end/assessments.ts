@@ -30,11 +30,11 @@ const getAssessment = async (streetNumber?: string, streetName?: string, directi
     // assert we have two trs: one for the headers and one for the data
     const assessments: Assessment[] = rows.map(tr => {
         return {
-            address: tr.children.item(2)?.textContent!,
-            assessedValue2023: parseFloat(tr.children.item(3)?.textContent!.replace("$", "").replaceAll(",", "")!),
-            taxDue: tr.children.item(4)?.textContent!,
-            taxPaymentStatus: tr.children.item(5)?.textContent!,
-            lastSale: tr.children.item(6)?.textContent!
+            address: tr.children.item(2)!.textContent!,
+            assessedValue2023: parseFloat(tr.children.item(3)!.textContent!.replace("$", "").replaceAll(",", "")!),
+            taxDue: tr.children.item(4)!.textContent!,
+            taxPaymentStatus: tr.children.item(5)!.textContent!,
+            lastSale: tr.children.item(6)!.textContent!
         }
     })
     return assessments;

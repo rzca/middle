@@ -20,7 +20,7 @@ export type GeocodedPermit = {
     location: Location;
 };
 
-export interface Assessment {
+export type Assessment = {
     address: string,
     assessedValue2023: number,
     taxDue: string,
