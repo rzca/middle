@@ -58,15 +58,17 @@ for (const permit of permits) {
         const type = getType(permit.permit.address);
 
         // sometimes the N. or the S. appears in different spots
-        const street = permit.permit.address
+        const streetNameWords = permit.permit.address
             .replace("N.", "")
             .replace("S.", "")
             .replace("  ", " ")
-            .split(" ").slice(1, permit.permit.address.split(" ").length)[0];
+            .split(" ");
+
+        const streetName = streetNameWords.length == 3 ? streetNameWords[1] : streetNameWords[1].concat(" " + streetNameWords[2]);
 
         const streetNumber = numberRegex.exec(permit.permit.address)![0];
 
-        const assessment = await getAssessment(streetNumber, street, direction, type);
+        const assessment = await getAssessment(streetNumber, streetName, direction, type);
         if (assessment.length == 1) {
             newPermits.push({ permit: permit.permit, location: permit.location, assessment: assessment[0] })
         }
@@ -74,6 +76,9 @@ for (const permit of permits) {
             console.log("did not find assessment", permit.permit);
             newPermits.push({ permit: permit.permit, location: permit.location, assessment: undefined })
         }
+    }
+    else {
+        newPermits.push(permit);
     }
 }
 

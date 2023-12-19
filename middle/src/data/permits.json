@@ -47,6 +47,13 @@
     "location": {
       "latitude": -77.11505822670783,
       "longitude": 38.875944170273236
+    },
+    "assessment": {
+      "address": "4611 N CARLIN SPRINGS RD",
+      "assessedValue2023": 927300,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "12/22/2022"
     }
   },
   {
@@ -59,6 +66,13 @@
     "location": {
       "latitude": -77.1198915131058,
       "longitude": 38.87709758213202
+    },
+    "assessment": {
+      "address": "735 N GEORGE MASON DR",
+      "assessedValue2023": 828600,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "2/24/2022"
     }
   },
   {
@@ -159,6 +173,13 @@
     "location": {
       "latitude": -77.1316398191915,
       "longitude": 38.894143215898985
+    },
+    "assessment": {
+      "address": "2100 N GEORGE MASON DR",
+      "assessedValue2023": 865100,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "12/7/2022"
     }
   },
   {
