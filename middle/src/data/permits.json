@@ -10,6 +10,13 @@
       "units": 3,
       "unitType": "Townhouse",
       "zoningDistrict": "R-6"
+    },
+    "assessment": {
+      "address": "2005 N TAYLOR ST",
+      "assessedValue2023": 943400,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "9/30/2022"
     }
   },
   {
@@ -533,6 +540,13 @@
       "units": 6,
       "unitType": "Multifamily",
       "zoningDistrict": "R-6"
+    },
+    "assessment": {
+      "address": "1052 S EDISON ST",
+      "assessedValue2023": 672200,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "2/8/2022"
     }
   },
   {
