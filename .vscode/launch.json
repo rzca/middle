@@ -4,10 +4,38 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch via NPM",
+            "name": "geocodes",
             "runtimeArgs": [
                 "run-script",
-                "data"
+                "geocodes"
+            ],
+            "cwd": "${workspaceFolder}/middle",
+            "runtimeExecutable": "npm",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "assessments",
+            "runtimeArgs": [
+                "run-script",
+                "assessments"
+            ],
+            "cwd": "${workspaceFolder}/middle",
+            "runtimeExecutable": "npm",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "permits",
+            "runtimeArgs": [
+                "run-script",
+                "permits"
             ],
             "cwd": "${workspaceFolder}/middle",
             "runtimeExecutable": "npm",
