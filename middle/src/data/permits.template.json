@@ -20,4 +20,12 @@
             "lastSale": "sdf"
         }
     }
+    {
+        "permit": {
+            "status": "Approved",
+            "address": "2005 N. Taylor Street",
+            "units": 3,
+            "zip": 22207
+        }
+    }
 ]

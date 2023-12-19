@@ -1,6 +1,4 @@
-// import { GeocodedPermit } from "../shared/types";
 import { default as permits } from "../data/permits.json" assert { type: "json" };
-// import { default as permitsWithAssessments } from "../data/assessments.json";
 import { JSDOM } from 'jsdom';
 import { Location, Permit, Assessment } from "../shared/types";
 import { default as fs } from "fs/promises";

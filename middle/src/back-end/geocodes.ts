@@ -1,22 +1,9 @@
 import { Semaphore } from "@shopify/semaphore";
+
+import { default as permits } from "../data/permits.json" assert { type: "json" };
 import { JSDOM } from 'jsdom';
-
-type Permit = {
-    permitNumber: string,
-    submissionDate: string,
-    approvalDate: string | null,
-    status: string,
-    address: string,
-    units: number,
-    zip: number,
-    unitType: string,
-    zoningDistrict: string
-}
-
-type GeocodedPermit = {
-    permit: Permit,
-    location: { latitude: number, longitude: number,} | undefined
-}
+import { Location, Permit } from "../shared/types";
+import { default as fs } from "fs/promises";
 
 let html: string | null = null;
 const permits: Permit[] = []
@@ -60,60 +47,40 @@ const getCoordinatesForPermit = async (permit: Permit, checkCache = true) => {
     return cache[permit.address];
 }
 
-export const getData = async () => {
-
-    if (html == null) {
-        const text = await fetch("https://www.arlingtonva.us/Government/Programs/Building/Permits/EHO/Tracker")
-            .then(res => res.blob())
-            .then(blob => blob.text());
-    
-        html = text;
-        const dom = new JSDOM(html);
-    
-        // get all the permits from the approved table
-        Array.from(dom.window.document.querySelectorAll("table:nth-of-type(1) > tbody > tr")).slice(1).forEach(tr => {
-            permits.push({
-                permitNumber: tr.children.item(0)?.textContent,
-                submissionDate: tr.children.item(1)?.textContent,
-                approvalDate: tr.children.item(2)?.textContent,
-                status: tr.children.item(3)?.textContent,
-                address: tr.children.item(4)?.textContent,
-                zip: parseInt(tr.children.item(5)?.textContent),
-                units: parseInt(tr.children.item(6)?.textContent),
-                unitType: tr.children.item(7)?.textContent,
-                zoningDistrict: tr.children.item(8)?.textContent,
-            })
-        });
-    
-        // get all the permits from the under review table
-        Array.from(dom.window.document.querySelectorAll("table:nth-of-type(3) > tbody > tr")).slice(1).forEach(tr => {
-            permits.push({
-                permitNumber: tr.children.item(0)?.textContent!,
-                submissionDate: tr.children.item(1)?.textContent!,
-                approvalDate: null,
-                status: tr.children.item(3)?.textContent!,
-                address: tr.children.item(4)?.textContent!,
-                zip: parseInt(tr.children.item(5)?.textContent!),
-                units: parseInt(tr.children.item(6)?.textContent!),
-                unitType: tr.children.item(7)?.textContent!,
-                zoningDistrict: tr.children.item(8)?.textContent!,
-            })
-        });
-    }
-    
-    const geocodedPermits = await Promise.all(permits.map(async (permit) => {
-        try {
-            return await getCoordinatesForPermit(permit)
-        } catch(e) {
-            return { permit, location: undefined };
-        }
-        }));
-
-    console.log(JSON.stringify(geocodedPermits));    
-
-    return geocodedPermits;
-}
-
 // export const writeData(geocodedPermits: GeocodedPermit[]) {
 
 // }
+
+
+for (const permit of permits) {
+    if (permit.location == null) {
+        const numberRegex: RegExp = /[0-9]{1,4}/;
+        const direction: "N" | "S" = permit.permit.address.includes("S.") ? "S" : "N";
+        const type = getType(permit.permit.address);
+
+        // sometimes the N. or the S. appears in different spots
+        const streetNameWords = permit.permit.address
+            .replace("N.", "")
+            .replace("S.", "")
+            .replace("  ", " ")
+            .split(" ");
+
+        const streetName = streetNameWords.length == 3 ? streetNameWords[1] : streetNameWords[1].concat(" " + streetNameWords[2]);
+
+        const streetNumber = numberRegex.exec(permit.permit.address)![0];
+
+        const assessment = await getAssessment(streetNumber, streetName, direction, type);
+        if (assessment.length == 1) {
+            newPermits.push({ permit: permit.permit, location: permit.location, assessment: assessment[0] })
+        }
+        else {
+            console.log("did not find assessment", permit.permit);
+            newPermits.push({ permit: permit.permit, location: permit.location, assessment: undefined })
+        }
+    }
+    else {
+        newPermits.push(permit);
+    }
+}
+
+await fs.writeFile('./src/data/permits.json', JSON.stringify(newPermits, null, 2), 'utf8');

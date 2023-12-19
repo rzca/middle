@@ -111,7 +111,9 @@ export const App = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        {permits.map((p) => {
+        {permits
+        .filter(p => p.location != null)
+        .map((p) => {
           return (
             <Marker
               icon={

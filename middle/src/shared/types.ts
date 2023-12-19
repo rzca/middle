@@ -1,10 +1,14 @@
-
 export type Permit = {
-    status: string;
-    address: string;
-    units: number;
-    zip: number;
-};
+    permitNumber: string,
+    submissionDate: string,
+    approvalDate: string | null,
+    status: string,
+    address: string,
+    units: number,
+    zip: number,
+    unitType: string,
+    zoningDistrict: string
+}
 
 export type Location = {
     latitude: number;

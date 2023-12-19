@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "assessments": "ts-node --esm ./src/back-end/assessments.ts",
     "geocodes": "ts-node --esm ./src/back-end/geocodes.ts",
-    "permits": "ts-node --esm ./src/back-end/permitScraper.ts"
+    "permits": "ts-node --esm ./src/back-end/permits.ts"
   },
   "dependencies": {
     "@blueprintjs/core": "^5.7.2",
