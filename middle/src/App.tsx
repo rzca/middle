@@ -115,6 +115,8 @@ export const App = () => {
   } | null>(null);
   const [znDesignations] = useState<{ [desig: string]: string }>(initialZones);
 
+  permits.filter(p => p.location == null).forEach(p => console.log("a permit has not been geocoded", p));
+
   const mapContainer = useMemo(() => {
     return (
       <MapContainer

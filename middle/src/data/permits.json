@@ -11,6 +11,10 @@
       "unitType": "Townhouse",
       "zoningDistrict": "R-6"
     },
+    "location": {
+      "latitude": -77.11322323183396,
+      "longitude": 38.895411423883125
+    },
     "assessment": {
       "address": "2005 N TAYLOR ST",
       "assessedValue2023": 943400,
@@ -431,6 +435,10 @@
       "units": 4,
       "unitType": "Multifamily ",
       "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.1008488072026,
+      "longitude": 38.85317834320084
     }
   },
   {
@@ -540,6 +548,10 @@
       "units": 6,
       "unitType": "Multifamily",
       "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.11267893904684,
+      "longitude": 38.85300733627215
     },
     "assessment": {
       "address": "1052 S EDISON ST",
@@ -793,6 +805,10 @@
       "units": 3,
       "unitType": "Townhouse",
       "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.1198915131058,
+      "longitude": 38.87709758213202
     }
   },
   {
@@ -854,6 +870,10 @@
       "units": 3,
       "unitType": "Townhouse",
       "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.12499073148112,
+      "longitude": 38.88603338610894
     }
   },
   {
@@ -867,6 +887,10 @@
       "units": 2,
       "unitType": "Semidetached ",
       "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.14822446340185,
+      "longitude": 38.89214007882389
     }
   }
 ]
