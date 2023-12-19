@@ -6,8 +6,6 @@ import { Location, Permit } from "../shared/types";
 import { default as fs } from "fs/promises";
 
 interface Assessment {
-    rpc: string,
-    owner: string,
     address: string,
     assessedValue2023: number,
     taxDue: string,
@@ -15,7 +13,7 @@ interface Assessment {
     lastSale: string
 }
 
-const getAssessment = async (streetNumber: string, streetName: string, direction: "N" | "S", streetType: string) => {
+const getAssessment = async (streetNumber?: string, streetName?: string, direction?: "N" | "S", streetType?: string) => {
     const xx = await fetch("https://propertysearch.arlingtonva.us/Home/Search", {
         "credentials": "include",
         "headers": {
@@ -39,17 +37,19 @@ const getAssessment = async (streetNumber: string, streetName: string, direction
 
     // return xx;
 
+
     const dom = new JSDOM(xx);
 
     const zz = Array.from(dom.window.document.querySelectorAll("table:nth-of-type(1) > tbody > tr")).slice(1);
 
     // assert we have two trs: one for the headers and one for the data
     const assessments: Assessment[] = zz.map(tr => {
+        const ss = tr.children.item(3)?.textContent!.replace("$", "").replaceAll(",", "");
+        console.log(ss);
+
         return {
-            rpc: tr.children.item(0)?.textContent!,
-            owner: tr.children.item(1)?.textContent!,
             address: tr.children.item(2)?.textContent!,
-            assessedValue2023: parseFloat(tr.children.item(3)?.textContent!.replace("?", "").replace(",", "")!),
+            assessedValue2023: parseFloat(tr.children.item(3)?.textContent!.replace("$", "").replace(",", "")!),
             taxDue: tr.children.item(4)?.textContent!,
             taxPaymentStatus: tr.children.item(5)?.textContent!,
             lastSale: tr.children.item(6)?.textContent!
@@ -58,26 +58,44 @@ const getAssessment = async (streetNumber: string, streetName: string, direction
     return assessments;
 }
 
-// permits satisfies { permit: Permit, location?: Location, assessment?: Assessment }[]
-const newPermits: { permit: Permit, location?: Location, assessment?: Assessment }[] = permits;
+const newPermits: { permit: Permit, location?: Location, assessment?: Assessment }[] = [];
 
-permits.forEach(async permit => {
+await getAssessment();
+
+const getType = (address: string): "ST" | "DR" | "RD" | "CT" | undefined => {
+    if (address.toLowerCase().includes("street")) return "ST";
+    if (address.toLowerCase().includes("drive")) return "DR";
+    if (address.toLowerCase().includes("road")) return "RD";
+    if (address.toLowerCase().includes("court")) return "CT";
+} // I'm sure there are more! 
+
+for (const permit of permits) {
     if (permit.assessment == null) {
         const numberRegex: RegExp = /[0-9]{1,4}/;
-        const streetNumber = numberRegex.exec(permit.permit.address)![0]
+        const direction: "N" | "S" = permit.permit.address.includes("S.") ? "S" : "N";
+        const type = getType(permit.permit.address);
 
-        const assessment = await getAssessment(streetNumber, "taylor", "S", "Drive");
+        // sometimes the N. or the S. appears in different spots
+        const street = permit.permit.address
+            .replace("N.", "")
+            .replace("S.", "")
+            .replace("  ", " ")
+            .split(" ").slice(1, permit.permit.address.split(" ").length)[0];
+
+        const streetNumber = numberRegex.exec(permit.permit.address)![0];
+
+        const assessment = await getAssessment(streetNumber, street, direction, type);
         if (assessment.length == 1) {
             newPermits.push({ permit: permit.permit, location: permit.location, assessment: assessment[0] })
         }
         else {
+            console.log("did not find assessment", permit.permit);
             newPermits.push({ permit: permit.permit, location: permit.location, assessment: undefined })
         }
-
     }
-})
+}
 
-await fs.writeFile('./src/data/geocodedPermits.json', JSON.stringify(newPermits), 'utf8');
+await fs.writeFile('./src/data/geocodedPermits.json', JSON.stringify(newPermits, null, 2), 'utf8');
 
 // const ss = await getAssessment("2909", "2ND", "N", "RD");
 // console.log(ss);
