@@ -79,7 +79,7 @@ const ZoneFeatureLayer = (props: { znDesig: string; color?: string }) => {
   const featureRef = useRef();
   return (
     <FeatureLayer
-      // @ts-ignore there is something wrong with the react-esri-leaflet library types
+      // @ts-expect-error there is something wrong with the react-esri-leaflet library types
       url={
         "https://arlgis.arlingtonva.us/arcgis/rest/services/Open_Data/od_Zoning_Polygons/FeatureServer/0"
       }
@@ -115,7 +115,9 @@ export const App = () => {
   } | null>(null);
   const [znDesignations] = useState<{ [desig: string]: string }>(initialZones);
 
-  permits.filter(p => p.location == null).forEach(p => console.log("a permit has not been geocoded", p));
+  permits
+    .filter((p) => p.location == null)
+    .forEach((p) => console.log("a permit has not been geocoded", p));
 
   const mapContainer = useMemo(() => {
     return (
@@ -169,12 +171,15 @@ export const App = () => {
         <LayersControl position={"topright"}>
           {Object.entries(znDesignations).map((entry) => {
             return (
-              <LayersControl.Overlay checked name={entry[0]}>
+              <LayersControl.Overlay checked name={entry[0]} key={entry[0]}>
                 <ZoneFeatureLayer znDesig={entry[0]} />
               </LayersControl.Overlay>
             );
           })}
-          <LayersControl.Overlay name="Arlington County">
+          <LayersControl.Overlay
+            name="Arlington County"
+            key={"Arlington County"}
+          >
             <GeoJSON data={arlington2}></GeoJSON>
           </LayersControl.Overlay>
         </LayersControl>
@@ -188,85 +193,98 @@ export const App = () => {
         <Section>
           {mapContainer}
           <table className="bp5-html-table {{.modifier}}">
-            {znDesignations &&
-              Object.entries(znDesignations).map((entry) => {
-                const color = getColor(entry[0]);
-                return (
-                  <tr>
-                    <td
-                      style={{
-                        backgroundColor: color,
-                        width: "10px",
-                        height: "10px",
-                      }}
-                    ></td>
-                    <td>
-                      <b>{entry[0]}</b>
-                    </td>
-                    <td>{entry[1]}</td>
-                  </tr>
-                );
-              })}
+            <tbody>
+              {znDesignations &&
+                Object.entries(znDesignations).map((entry) => {
+                  const color = getColor(entry[0]);
+                  return (
+                    <tr key={entry[0]}>
+                      <td
+                        style={{
+                          backgroundColor: color,
+                          width: "10px",
+                          height: "10px",
+                        }}
+                      ></td>
+                      <td>
+                        <b>{entry[0]}</b>
+                      </td>
+                      <td>{entry[1]}</td>
+                    </tr>
+                  );
+                })}
+            </tbody>
           </table>
         </Section>
         <Section>
           {permits && (
-            <table className="bp5-html-table bp5-compact bp5-html-table-striped">
-              <thead>
-                <tr>
-                  <th>Address</th>
-                  <th>Units</th>
-                  <th>Assessed value in 2023</th>
-                  <th>Submission date</th>
-                  <th>Approval date?</th>
-                  <th>Zoning District</th>
-                  <th>Permit number</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                {permits.map((p) => (
-                  <tr onMouseOver={() => setActivePermit(p)}>
-                    <td>{p.permit.address}</td>
-                    <td>{p.permit.units}</td>
-                    <td>
-                      {p.assessment &&
-                        Intl.NumberFormat("en-US", {
-                          style: "currency",
-                          currency: "USD",
-                        }).format(p.assessment?.assessedValue2023)}
-                    </td>
-                    <td>{p.permit.submissionDate}</td>
-                    <td>{p.permit.approvalDate}</td>
-                    <td>{p.permit.zoningDistrict}</td>
-                    <td>{p.permit.permitNumber}</td>
-                    <td>{p.permit.status}</td>
+            <div style={{ overflowX: "scroll" }}>
+              <table className="bp5-html-table bp5-compact bp5-html-table-striped">
+                <thead>
+                  <tr>
+                    <th>Address</th>
+                    <th>Units</th>
+                    <th>Assessed value in 2023</th>
+                    <th>{"Submission date [Approval date]"}</th>
+                    <th>Zoning District</th>
+                    <th>Permit number</th>
+                    <th>Status</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {permits.map((p) => (
+                    <tr
+                      key={p.permit.address}
+                      onMouseOver={() => setActivePermit(p)}
+                    >
+                      <td>{p.permit.address}</td>
+                      <td>{p.permit.units}</td>
+                      <td>
+                        {p.assessment &&
+                          Intl.NumberFormat("en-US", {
+                            style: "currency",
+                            currency: "USD",
+                            maximumFractionDigits: 0,
+                          }).format(p.assessment?.assessedValue2023)}
+                      </td>
+                      <td>
+                        {p.permit.submissionDate +
+                          (p.permit.approvalDate != null
+                            ? " [" + p.permit.approvalDate + "]"
+                            : "")}
+                      </td>
+                      <td>{p.permit.zoningDistrict}</td>
+                      <td>{p.permit.permitNumber}</td>
+                      <td>{p.permit.status}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           )}
         </Section>
         <Section>
-          <div>
-            Credit to{" "}
-            <a href="https://cartographyvectors.com/map/1129-virginia-with-county-boundaries">
-              https://cartographyvectors.com/map/1129-virginia-with-county-boundaries
-            </a>{" "}
-            for the outline of Arlington
-          </div>
-          <div>
-            Original data from{" "}
-            <a href="https://www.arlingtonva.us/Government/Programs/Building/Permits/EHO/Tracker">
-              https://www.arlingtonva.us/Government/Programs/Building/Permits/EHO/Tracker
-            </a>
-          </div>
-          <div>Geocoding accuracy is best effort, not guaranteed</div>
-          <div>
-            Zoning data is from{" "}
-            <a href="https://gisdata-arlgis.opendata.arcgis.com/datasets/zoning-polygons-1/explore">
-              Arlington County opendata
-            </a>
+          <div style={{ overflowX: "scroll", textWrap: "wrap" }}>
+            <ul>
+              Credit to{" "}
+              <a href="https://cartographyvectors.com/map/1129-virginia-with-county-boundaries">
+                https://cartographyvectors.com/map/1129-virginia-with-county-boundaries
+              </a>{" "}
+              for the outline of Arlington
+            </ul>
+            <ul>
+              Original data from{" "}
+              <a href="https://www.arlingtonva.us/Government/Programs/Building/Permits/EHO/Tracker">
+                https://www.arlingtonva.us/Government/Programs/Building/Permits/EHO/Tracker
+              </a>
+            </ul>
+            <ul>Geocoding accuracy is best effort, not guaranteed</ul>
+            <ul>
+              Zoning data is from{" "}
+              <a href="https://gisdata-arlgis.opendata.arcgis.com/datasets/zoning-polygons-1/explore">
+                Arlington County opendata
+              </a>
+            </ul>
           </div>
         </Section>
       </div>
