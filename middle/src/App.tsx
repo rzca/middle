@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import "leaflet/dist/leaflet.css";
-import { MapContainer, Marker, Popup, TileLayer, GeoJSON } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer, GeoJSON, LayersControl } from "react-leaflet";
 import "./App.css";
 
 import { default as permits } from "./data/geocodedpermits.json";
@@ -11,7 +11,9 @@ import { default as arlington } from "./data/arlington.json";
 // import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import L from "leaflet";
-import { Section } from "@blueprintjs/core";
+import { Colors, Section } from "@blueprintjs/core";
+import { FeatureLayer } from "react-esri-leaflet";
+import { GeocodedPermit } from "./shared/types";
 
 const activeIcon = L.icon({
   iconUrl:
@@ -30,33 +32,67 @@ const defaultIcon = L.icon({
 });
 L.Marker.prototype.options.icon = defaultIcon;
 
-type Permit = {
-  status: string;
-  address: string;
-  units: number;
-  zip: number;
-};
+const icon = (color: string) => {
+  return L.icon({
+    iconUrl:
+      `https://mapmarker.io/api/v3/font-awesome/v6/pin?icon=fa-solid%20fa-house&size=75&color=FFF&background=${color.replace("#", "")}&hoffset=0&voffset=0`,
+    shadowUrl: iconShadow,
+    iconSize: [30, 40],
+    iconAnchor: [12, 36],
+  });
+}
 
-type GeocodedPermit = {
-  permit: Permit;
-  location: { latitude: number; longitude: number };
-};
+type Feature = {
+  properties: { ZN_DESIG: string, LABEL: string }
+}
+
+const getColor = (znDesignation: string) => {
+  if (znDesignation == "R-6") return Colors.BLUE1;
+  if (znDesignation == "R-5") return Colors.ORANGE1;
+  if (znDesignation == "R-8") return Colors.FOREST1;
+  if (znDesignation == "R-10") return Colors.FOREST2;
+  if (znDesignation == "R-20") return Colors.FOREST3;
+  return Colors.VIOLET1
+}
+
+const initialZones = {
+  ["R-5"]: "One-Family, Restricted Two Family Dwelling District",
+  ["R-6"]: "One-Family Dwelling District",
+  ["R-8"]: "One-Family Dwelling District",
+  ["R-10"]: "One-Family Dwelling District",
+  ["R-20"]: "One-Family Dwelling District",
+  ["R-10T"]: "One Family Residential-Town-House Dwelling District",
+  ["R15-30T"]: "Residential Town House Dwelling District",
+  ["R2-7"]: "Two-Family and Town House Dwelling District",
+}
+
+const ZoneFeatureLayer = (props: { znDesig: string, color?: string }) => {
+  const featureRef = useRef();
+  return <FeatureLayer
+    // @ts-ignore there is something wrong with the react-esri-leaflet library types
+    url={"https://arlgis.arlingtonva.us/arcgis/rest/services/Open_Data/od_Zoning_Polygons/FeatureServer/0"}
+    featureRef={featureRef}
+    // where={"GZDC = 'R'"}
+    where={`ZN_DESIG = '${props.znDesig}'`}
+    style={((_: Feature) => {
+      return { color: props.color ?? getColor(props.znDesig) };
+    })}
+  // onEachFeature={(feature: Feature) => {
+  //   // zns[feature.properties.ZN_DESIG] = feature.properties.LABEL;
+  //   setZnDesignations(prev => {
+  //     return ({ ...prev, [feature.properties.ZN_DESIG]: feature.properties.LABEL })
+  //   });
+  // }}
+  />
+}
+
 
 export const App = () => {
   permits satisfies GeocodedPermit[];
+  const arlington2 = arlington as { type: "Feature" };
 
   const [activePermit, setActivePermit] = useState<GeocodedPermit | null>(null);
-  const [geocodedPermits, setGeocodedPermits] = useState<GeocodedPermit[] | null>(null);
-  const [errorString, setErrorString] = useState<string | null>(null);
-
-  useEffect(() => {
-    try {
-      setGeocodedPermits(permits);
-    } catch (err) {
-      console.log(err);
-      setErrorString("failed to parse data");
-    }
-  }, []);
+  const [znDesignations] = useState<{ [desig: string]: string }>(initialZones);
 
   const mapContainer = useMemo(() => {
     return (
@@ -65,7 +101,6 @@ export const App = () => {
         zoom={11}
         scrollWheelZoom={true}
         style={{
-          margin: "auto",
           height: "80vh",
           width: "100vw",
           maxWidth: "1200px",
@@ -75,50 +110,58 @@ export const App = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {/* @ts-expect-error idk why this it doesn't like this*/}
-        <GeoJSON data={arlington as GeoJSONObject}></GeoJSON>
 
-        {geocodedPermits &&
-          geocodedPermits.map((p) => {
-            return (
-              <Marker
-                icon={
-                  p.permit.address === activePermit?.permit.address
-                    ? activeIcon
-                    : defaultIcon
-                }
-                position={[p.location.longitude, p.location.latitude]}
-                eventHandlers={{
-                  mouseover: (_) => setActivePermit(p),
-                }}
-                key={p.permit.address}
-              >
-                <Popup>
-                  <div>{p.permit.address}</div>
-                  <div>{p.permit.units + " units"}</div>
-                  <div>{p.permit.status}</div>
-                </Popup>
-              </Marker>
-            );
+        {permits.map((p) => {
+          return (
+            <Marker
+              icon={
+                p.permit.address === activePermit?.permit.address
+                  ? activeIcon
+                  : icon(Colors.GRAY1)
+              }
+              position={[p.location.longitude, p.location.latitude]}
+              eventHandlers={{
+                mouseover: (_) => setActivePermit(p),
+              }}
+              key={p.permit.address}
+            >
+              <Popup>
+                <div>{p.permit.address}</div>
+                <div>{p.permit.units + " units"}</div>
+                <div>{p.permit.status}</div>
+              </Popup>
+            </Marker>
+          );
+        })}
+        <LayersControl position={"topright"}>
+          {Object.entries(znDesignations).map(entry => {
+            return <LayersControl.Overlay checked name={entry[0]}><ZoneFeatureLayer znDesig={entry[0]} /></LayersControl.Overlay>;
           })}
+          <LayersControl.Overlay name="Arlington County"><GeoJSON data={arlington2}></GeoJSON></LayersControl.Overlay>
+        </LayersControl>
       </MapContainer>
     );
-  }, [geocodedPermits, activePermit]);
+  }, [activePermit]);
 
   return (
     <div>
       <div>
-        <Section>{mapContainer}</Section>
+        <Section>{mapContainer}
+          <table className="bp5-html-table {{.modifier}}">
+            {znDesignations &&
+              Object.entries(znDesignations)
+                .map((entry) => {
+                  const color = getColor(entry[0]);
+                  return <tr>
+                    <td style={{ backgroundColor: color, width: "10px", height: "10px" }}></td>
+                    <td><b>{entry[0]}</b></td>
+                    <td>{entry[1]}</td>
+                  </tr>
+                })}
+          </table>
+        </Section>
         <Section>
-          {activePermit && (
-            <div>
-              <div>{activePermit.permit.address}</div>
-              <div>{activePermit.permit.units + " units"}</div>
-              <div>{activePermit.permit.status}</div>
-            </div>
-          )}
-          <div style={{}}>{errorString}</div>
-          {geocodedPermits && (
+          {permits && (
             <table className="bp5-html-table {{.modifier}}">
               <thead>
                 <tr>
@@ -128,7 +171,7 @@ export const App = () => {
                 </tr>
               </thead>
               <tbody>
-                {geocodedPermits.map((p) => (
+                {permits.map((p) => (
                   <tr onMouseOver={(_) => setActivePermit(p)}>
                     <td>{p.permit.address}</td>
                     <td>{p.permit.units}</td>
@@ -150,9 +193,10 @@ export const App = () => {
             <a href="https://www.arlingtonva.us/Government/Programs/Building/Permits/EHO/Tracker">https://www.arlingtonva.us/Government/Programs/Building/Permits/EHO/Tracker</a>
           </div>
           <div>Geocoding accuracy is best effort, not guaranteed</div>
+          <div>Zoning data is from <a href="https://gisdata-arlgis.opendata.arcgis.com/datasets/zoning-polygons-1/explore">Arlington County opendata</a></div>
         </Section>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };
 
