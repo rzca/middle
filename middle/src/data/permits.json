@@ -1,187 +1,26 @@
 [
   {
     "permit": {
-      "permitNumber": "ZEHO23-00011",
+      "permitNumber": "ZEHO23-00008",
       "submissionDate": "7/01/2023",
-      "approvalDate": "8/17/2023",
+      "approvalDate": "11/20/2023",
       "status": "Approved",
-      "address": "2005 N. Taylor Street",
-      "zip": 22207,
-      "units": 3,
-      "unitType": "Townhouse",
-      "zoningDistrict": "R-6"
-    },
-    "location": {
-      "latitude": -77.11322323183396,
-      "longitude": 38.895411423883125
-    },
-    "assessment": {
-      "address": "2005 N TAYLOR ST",
-      "assessedValue2023": 943400,
-      "taxDue": "$0.00",
-      "taxPaymentStatus": "Paid",
-      "lastSale": "9/30/2022"
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": "ZEHO23-00022",
-      "submissionDate": "7/05/2023",
-      "approvalDate": "8/16/2023",
-      "status": "Approved",
-      "address": "5041 25th Street S.",
-      "zip": 22206,
-      "units": 2,
-      "unitType": "Semidetached",
-      "zoningDistrict": "R-6"
-    },
-    "location": {
-      "latitude": -77.13196110703716,
-      "longitude": 38.89922068481843
-    },
-    "assessment": {
-      "address": "5041 25th ST S",
-      "assessedValue2023": 658700,
-      "taxDue": "$0.00",
-      "taxPaymentStatus": "Paid",
-      "lastSale": "11/2/2023"
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": "ZEHO23-00026",
-      "submissionDate": "7/07/2023",
-      "approvalDate": "8/16/2023",
-      "status": "Approved",
-      "address": "2612 S. Fern Street",
-      "zip": 22202,
+      "address": "1004 N. Daniel Street",
+      "zip": 22201,
       "units": 6,
       "unitType": "Multifamily",
       "zoningDistrict": "R-5"
     },
     "location": {
-      "latitude": -77.05527256068297,
-      "longitude": 38.85005167145353
+      "latitude": -77.09082457284634,
+      "longitude": 38.8846856658936
     },
     "assessment": {
-      "address": "2612 S FERN ST",
-      "assessedValue2023": 974600,
+      "address": "1004 N DANIEL ST",
+      "assessedValue2023": 1190400,
       "taxDue": "$0.00",
       "taxPaymentStatus": "Paid",
-      "lastSale": "4/10/2023"
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": "ZEHO23-00036",
-      "submissionDate": "7/12/2023",
-      "approvalDate": "8/24/2023",
-      "status": "Approved",
-      "address": "4611 N. Carlin Springs Road",
-      "zip": 22203,
-      "units": 6,
-      "unitType": "Multifamily",
-      "zoningDistrict": "R-6"
-    },
-    "location": {
-      "latitude": -77.11505822670783,
-      "longitude": 38.875944170273236
-    },
-    "assessment": {
-      "address": "4611 N CARLIN SPRINGS RD",
-      "assessedValue2023": 927300,
-      "taxDue": "$0.00",
-      "taxPaymentStatus": "Paid",
-      "lastSale": "12/22/2022"
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": "ZEHO23-00020",
-      "submissionDate": "7/06/2023",
-      "approvalDate": "8/30/2023",
-      "status": "Approved",
-      "address": "735 N. George Mason Drive",
-      "zip": 22203,
-      "units": 6,
-      "unitType": "Multifamily",
-      "zoningDistrict": "R-6"
-    },
-    "location": {
-      "latitude": -77.1198915131058,
-      "longitude": 38.87709758213202
-    },
-    "assessment": {
-      "address": "735 N GEORGE MASON DR",
-      "assessedValue2023": 828600,
-      "taxDue": "$0.00",
-      "taxPaymentStatus": "Paid",
-      "lastSale": "2/24/2022"
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": "ZEHO23-00034",
-      "submissionDate": " 7/12/2023",
-      "approvalDate": "9/13/2023",
-      "status": "Approved",
-      "address": "4015 7th Street S.",
-      "zip": 22204,
-      "units": 6,
-      "unitType": "Multifamily",
-      "zoningDistrict": "R-6"
-    },
-    "location": {
-      "latitude": -77.10081642763048,
-      "longitude": 38.8635008243322
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": "ZEHO23-00035",
-      "submissionDate": "7/12/2023",
-      "approvalDate": "9/13/2023",
-      "status": "Approved",
-      "address": "4019 7th Street S.",
-      "zip": 22204,
-      "units": 6,
-      "unitType": "Multifamily",
-      "zoningDistrict": "R-6"
-    },
-    "location": {
-      "latitude": -77.10087939258833,
-      "longitude": 38.863449082871924
-    },
-    "assessment": {
-      "address": "4019 7th ST S",
-      "assessedValue2023": 682600,
-      "taxDue": "$0.00",
-      "taxPaymentStatus": "Paid",
-      "lastSale": "12/2/2022"
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": "ZEHO23-00031",
-      "submissionDate": "7/14/2023",
-      "approvalDate": "9/13/2023",
-      "status": "Approved",
-      "address": "644 S. Illinois Street",
-      "zip": 22204,
-      "units": 2,
-      "unitType": "Duplex",
-      "zoningDistrict": "R-6"
-    },
-    "location": {
-      "latitude": -77.12175450346874,
-      "longitude": 38.85925966229667
-    },
-    "assessment": {
-      "address": "644 S ILLINOIS ST",
-      "assessedValue2023": 805900,
-      "taxDue": "$0.00",
-      "taxPaymentStatus": "Paid",
-      "lastSale": "6/8/2023"
+      "lastSale": "4/18/2023"
     }
   },
   {
@@ -210,50 +49,50 @@
   },
   {
     "permit": {
-      "permitNumber": "ZEHO23-00016",
+      "permitNumber": "ZEHO23-00010",
       "submissionDate": "7/01/2023",
-      "approvalDate": "9/26/2023",
+      "approvalDate": "10/17/2023",
       "status": "Approved",
-      "address": "1227 N. Utah Street",
+      "address": "3802 14th Street N.",
       "zip": 22201,
       "units": 6,
       "unitType": "Multifamily",
       "zoningDistrict": "R-5"
     },
     "location": {
-      "latitude": -77.11411079574275,
-      "longitude": 38.88598067683682
+      "latitude": -77.1064947238499,
+      "longitude": 38.888284564424765
     },
     "assessment": {
-      "address": "1227 N UTAH ST",
-      "assessedValue2023": 931400,
+      "address": "3802 14th ST N",
+      "assessedValue2023": 955000,
       "taxDue": "$0.00",
       "taxPaymentStatus": "Paid",
-      "lastSale": "8/5/2016"
+      "lastSale": "7/13/2021"
     }
   },
   {
     "permit": {
-      "permitNumber": "ZEHO23-00018",
-      "submissionDate": "7/12/2023",
-      "approvalDate": "10/03/2023",
+      "permitNumber": "ZEHO23-00011",
+      "submissionDate": "7/01/2023",
+      "approvalDate": "8/17/2023",
       "status": "Approved",
-      "address": "2100 N. George Mason Drive",
-      "zip": 22205,
-      "units": 4,
-      "unitType": "Multifamily",
+      "address": "2005 N. Taylor Street",
+      "zip": 22207,
+      "units": 3,
+      "unitType": "Townhouse",
       "zoningDistrict": "R-6"
     },
     "location": {
-      "latitude": -77.1316398191915,
-      "longitude": 38.894143215898985
+      "latitude": -77.11322323183396,
+      "longitude": 38.895411423883125
     },
     "assessment": {
-      "address": "2100 N GEORGE MASON DR",
-      "assessedValue2023": 865100,
+      "address": "2005 N TAYLOR ST",
+      "assessedValue2023": 943400,
       "taxDue": "$0.00",
       "taxPaymentStatus": "Paid",
-      "lastSale": "12/7/2022"
+      "lastSale": "9/30/2022"
     }
   },
   {
@@ -306,54 +145,6 @@
   },
   {
     "permit": {
-      "permitNumber": "ZEHO23-00040",
-      "submissionDate": "7/14/2023",
-      "approvalDate": "10/12/2023",
-      "status": "Approved",
-      "address": "5630 8th Street N.",
-      "zip": 22205,
-      "units": 5,
-      "unitType": "Multifamily",
-      "zoningDistrict": "R-6"
-    },
-    "location": {
-      "latitude": -77.12844494798698,
-      "longitude": 38.87479712508186
-    },
-    "assessment": {
-      "address": "5630 8th ST N",
-      "assessedValue2023": 829700,
-      "taxDue": "$0.00",
-      "taxPaymentStatus": "Paid",
-      "lastSale": "5/15/2023"
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": "ZEHO23-00010",
-      "submissionDate": "7/01/2023",
-      "approvalDate": "10/17/2023",
-      "status": "Approved",
-      "address": "3802 14th Street N.",
-      "zip": 22201,
-      "units": 6,
-      "unitType": "Multifamily",
-      "zoningDistrict": "R-5"
-    },
-    "location": {
-      "latitude": -77.1064947238499,
-      "longitude": 38.888284564424765
-    },
-    "assessment": {
-      "address": "3802 14th ST N",
-      "assessedValue2023": 955000,
-      "taxDue": "$0.00",
-      "taxPaymentStatus": "Paid",
-      "lastSale": "7/13/2021"
-    }
-  },
-  {
-    "permit": {
       "permitNumber": "ZEHO23-00014",
       "submissionDate": "7/01/2023",
       "approvalDate": "10/17/2023",
@@ -374,30 +165,6 @@
       "taxDue": "$0.00",
       "taxPaymentStatus": "Paid",
       "lastSale": "6/7/2021"
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": "ZEHO23-00041",
-      "submissionDate": "7/18/2023",
-      "approvalDate": "10/17/2023",
-      "status": "Approved",
-      "address": "629 N. Monroe Street",
-      "zip": 22201,
-      "units": 3,
-      "unitType": "Townhouse",
-      "zoningDistrict": "R-6"
-    },
-    "location": {
-      "latitude": -77.10151699288373,
-      "longitude": 38.879544185714565
-    },
-    "assessment": {
-      "address": "629 N MONROE ST",
-      "assessedValue2023": 1153400,
-      "taxDue": "$0.00",
-      "taxPaymentStatus": "Paid",
-      "lastSale": "7/20/2023"
     }
   },
   {
@@ -426,43 +193,477 @@
   },
   {
     "permit": {
-      "permitNumber": "ZEHO23-00044",
-      "submissionDate": "8/10/2023 ",
-      "approvalDate": "10/31/2023 ",
-      "status": "Approved ",
-      "address": "4229 16th Street S. ",
-      "zip": 22204,
-      "units": 4,
-      "unitType": "Multifamily ",
-      "zoningDistrict": "R-6"
-    },
-    "location": {
-      "latitude": -77.1008488072026,
-      "longitude": 38.85317834320084
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": "ZEHO23-00008",
+      "permitNumber": "ZEHO23-00016",
       "submissionDate": "7/01/2023",
-      "approvalDate": "11/20/2023",
+      "approvalDate": "9/26/2023",
       "status": "Approved",
-      "address": "1004 N. Daniel Street",
+      "address": "1227 N. Utah Street",
       "zip": 22201,
       "units": 6,
       "unitType": "Multifamily",
       "zoningDistrict": "R-5"
     },
     "location": {
-      "latitude": -77.09082457284634,
-      "longitude": 38.8846856658936
+      "latitude": -77.11411079574275,
+      "longitude": 38.88598067683682
     },
     "assessment": {
-      "address": "1004 N DANIEL ST",
-      "assessedValue2023": 1190400,
+      "address": "1227 N UTAH ST",
+      "assessedValue2023": 931400,
       "taxDue": "$0.00",
       "taxPaymentStatus": "Paid",
-      "lastSale": "4/18/2023"
+      "lastSale": "8/5/2016"
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00018",
+      "submissionDate": "7/12/2023",
+      "approvalDate": "10/03/2023",
+      "status": "Approved",
+      "address": "2100 N. George Mason Drive",
+      "zip": 22205,
+      "units": 4,
+      "unitType": "Multifamily",
+      "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.1316398191915,
+      "longitude": 38.894143215898985
+    },
+    "assessment": {
+      "address": "2100 N GEORGE MASON DR",
+      "assessedValue2023": 865100,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "12/7/2022"
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00020",
+      "submissionDate": "7/06/2023",
+      "approvalDate": "8/30/2023",
+      "status": "Approved",
+      "address": "735 N. George Mason Drive",
+      "zip": 22203,
+      "units": 6,
+      "unitType": "Multifamily",
+      "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.1198915131058,
+      "longitude": 38.87709758213202
+    },
+    "assessment": {
+      "address": "735 N GEORGE MASON DR",
+      "assessedValue2023": 828600,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "2/24/2022"
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00021",
+      "submissionDate": "8/16/2023",
+      "approvalDate": null,
+      "status": "First\nReview\nRejected\n[9/21/2023]",
+      "address": "432 N. Monroe Street",
+      "zip": 22201,
+      "units": 2,
+      "unitType": "Duplex",
+      "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.10068319937405,
+      "longitude": 38.87660238723735
+    },
+    "assessment": {
+      "address": "432 N MONROE ST",
+      "assessedValue2023": 1078400,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "4/4/2012"
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00022",
+      "submissionDate": "7/05/2023",
+      "approvalDate": "8/16/2023",
+      "status": "Approved",
+      "address": "5041 25th Street S.",
+      "zip": 22206,
+      "units": 2,
+      "unitType": "Semidetached",
+      "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.13196110703716,
+      "longitude": 38.89922068481843
+    },
+    "assessment": {
+      "address": "5041 25th ST S",
+      "assessedValue2023": 658700,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "11/2/2023"
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00024",
+      "submissionDate": "8/25/2023",
+      "approvalDate": null,
+      "status": "**WITHDRAWN**\n10/16/2023",
+      "address": "12 S. Highland Street",
+      "zip": 22204,
+      "units": 2,
+      "unitType": "Duplex",
+      "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.09193587104666,
+      "longitude": 38.87258477191245
+    },
+    "assessment": {
+      "address": "12 S HIGHLAND ST",
+      "assessedValue2023": 776700,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "4/11/2023"
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00026",
+      "submissionDate": "7/07/2023",
+      "approvalDate": "8/16/2023",
+      "status": "Approved",
+      "address": "2612 S. Fern Street",
+      "zip": 22202,
+      "units": 6,
+      "unitType": "Multifamily",
+      "zoningDistrict": "R-5"
+    },
+    "location": {
+      "latitude": -77.05527256068297,
+      "longitude": 38.85005167145353
+    },
+    "assessment": {
+      "address": "2612 S FERN ST",
+      "assessedValue2023": 974600,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "4/10/2023"
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00027",
+      "submissionDate": "7/28/2023",
+      "approvalDate": null,
+      "status": "First\nReview\nRejected\n[8/21/2023]",
+      "address": "2108 S. Joyce Street",
+      "zip": 22202,
+      "units": 2,
+      "unitType": "Duplex",
+      "zoningDistrict": "R-5"
+    },
+    "location": {
+      "latitude": -77.06329248730268,
+      "longitude": 38.854661802028424
+    },
+    "assessment": {
+      "address": "2108 S JOYCE ST",
+      "assessedValue2023": 972100,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "11/21/2011"
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00031",
+      "submissionDate": "7/14/2023",
+      "approvalDate": "9/13/2023",
+      "status": "Approved",
+      "address": "644 S. Illinois Street",
+      "zip": 22204,
+      "units": 2,
+      "unitType": "Duplex",
+      "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.12175450346874,
+      "longitude": 38.85925966229667
+    },
+    "assessment": {
+      "address": "644 S ILLINOIS ST",
+      "assessedValue2023": 805900,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "6/8/2023"
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00034",
+      "submissionDate": "7/12/2023",
+      "approvalDate": "9/13/2023",
+      "status": "Approved",
+      "address": "4015 7th Street S.",
+      "zip": 22204,
+      "units": 6,
+      "unitType": "Multifamily",
+      "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.10081642763048,
+      "longitude": 38.8635008243322
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00035",
+      "submissionDate": "7/12/2023",
+      "approvalDate": "9/13/2023",
+      "status": "Approved",
+      "address": "4019 7th Street S.",
+      "zip": 22204,
+      "units": 6,
+      "unitType": "Multifamily",
+      "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.10087939258833,
+      "longitude": 38.863449082871924
+    },
+    "assessment": {
+      "address": "4019 7th ST S",
+      "assessedValue2023": 682600,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "12/2/2022"
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00036",
+      "submissionDate": "7/12/2023",
+      "approvalDate": "8/24/2023",
+      "status": "Approved",
+      "address": "4611 N. Carlin Springs Road",
+      "zip": 22203,
+      "units": 6,
+      "unitType": "Multifamily",
+      "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.11505822670783,
+      "longitude": 38.875944170273236
+    },
+    "assessment": {
+      "address": "4611 N CARLIN SPRINGS RD",
+      "assessedValue2023": 927300,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "12/22/2022"
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00039",
+      "submissionDate": "7/13/2023",
+      "approvalDate": null,
+      "status": "First\nReview\nRejected\n[9/14/2023]",
+      "address": "900 20th St S",
+      "zip": 22202,
+      "units": 3,
+      "unitType": "Multifamily",
+      "zoningDistrict": "R-5"
+    },
+    "location": {
+      "latitude": -77.06150027586754,
+      "longitude": 38.85550892829733
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00040",
+      "submissionDate": "7/14/2023",
+      "approvalDate": "10/12/2023",
+      "status": "Approved",
+      "address": "5630 8th Street N.",
+      "zip": 22205,
+      "units": 5,
+      "unitType": "Multifamily",
+      "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.12844494798698,
+      "longitude": 38.87479712508186
+    },
+    "assessment": {
+      "address": "5630 8th ST N",
+      "assessedValue2023": 829700,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "5/15/2023"
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00041",
+      "submissionDate": "7/18/2023",
+      "approvalDate": "10/17/2023",
+      "status": "Approved",
+      "address": "629 N. Monroe Street",
+      "zip": 22201,
+      "units": 3,
+      "unitType": "Townhouse",
+      "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.10151699288373,
+      "longitude": 38.879544185714565
+    },
+    "assessment": {
+      "address": "629 N MONROE ST",
+      "assessedValue2023": 1153400,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "7/20/2023"
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00043",
+      "submissionDate": "7/26/2023",
+      "approvalDate": null,
+      "status": "First\nReview\nRejected\n[9/01/2023]",
+      "address": "1052 S. Edison Street",
+      "zip": 22204,
+      "units": 6,
+      "unitType": "Multifamily",
+      "zoningDistrict": "R-6"
+    },
+    "assessment": {
+      "address": "1052 S EDISON ST",
+      "assessedValue2023": 669700,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "2/8/2022"
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00044",
+      "submissionDate": "8/10/2023",
+      "approvalDate": "10/31/2023",
+      "status": "Approved",
+      "address": "4229 16th Street S.",
+      "zip": 22204,
+      "units": 4,
+      "unitType": "Multifamily",
+      "zoningDistrict": "R-6"
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00045",
+      "submissionDate": "8/16/2023",
+      "approvalDate": null,
+      "status": "First\nReview\nRejected\n[9/20/2023]",
+      "address": "703 N. Barton Street",
+      "zip": 22201,
+      "units": 4,
+      "unitType": "Multifamily",
+      "zoningDistrict": "R-5"
+    },
+    "location": {
+      "latitude": -77.08723320915793,
+      "longitude": 38.88075161229324
+    },
+    "assessment": {
+      "address": "703 N BARTON ST",
+      "assessedValue2023": 1021800,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "6/1/2022"
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00050",
+      "submissionDate": "9/05/2023",
+      "approvalDate": null,
+      "status": "Second\nReview\nRejected\n[12/04/2023]",
+      "address": "3411 7th Street S.",
+      "zip": 22204,
+      "units": 4,
+      "unitType": "Multifamily",
+      "zoningDistrict": "R-5"
+    },
+    "location": {
+      "latitude": -77.0934969311431,
+      "longitude": 38.865658551720784
+    },
+    "assessment": {
+      "address": "3411 7th ST S",
+      "assessedValue2023": 921100,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "11/30/2021"
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00051",
+      "submissionDate": "9/18/2023",
+      "approvalDate": null,
+      "status": "First\nReview\nRejected\n[11/27/2023]",
+      "address": "520 N.Garfield Street",
+      "zip": 22201,
+      "units": 3,
+      "unitType": "Multifamily",
+      "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.09349671270246,
+      "longitude": 38.879722074284494
+    },
+    "assessment": {
+      "address": "520 N GARFIELD ST",
+      "assessedValue2023": 1274100,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "9/14/2020"
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00052",
+      "submissionDate": "10/10/2023",
+      "approvalDate": null,
+      "status": "Under\nSecond\nReview\n[12/05/2023]",
+      "address": "1524 N. Randolph Street",
+      "zip": 22207,
+      "units": 2,
+      "unitType": "Duplex",
+      "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.11040288522899,
+      "longitude": 38.88992823384846
+    },
+    "assessment": {
+      "address": "1524 N RANDOLPH ST",
+      "assessedValue2023": 1495400,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Deferral",
+      "lastSale": "4/4/1989"
     }
   },
   {
@@ -498,7 +699,7 @@
       "address": "5617 23rd Street N.",
       "zip": 22205,
       "units": 2,
-      "unitType": " Semidetached ",
+      "unitType": "Semidetached",
       "zoningDistrict": "R-6"
     },
     "location": {
@@ -511,6 +712,23 @@
       "taxDue": "$0.00",
       "taxPaymentStatus": "Paid",
       "lastSale": "4/14/2023"
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00055",
+      "submissionDate": "10/12/2023",
+      "approvalDate": "12/22/2023",
+      "status": "Approved",
+      "address": "4610 17th St N.",
+      "zip": 22207,
+      "units": 6,
+      "unitType": "Multifamily",
+      "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.11844933348101,
+      "longitude": 38.891363837947516
     }
   },
   {
@@ -539,32 +757,15 @@
   },
   {
     "permit": {
-      "permitNumber": "ZEHO23-00055 ",
-      "submissionDate": "10/12/2023 ",
-      "approvalDate": "12/22/2023 ",
-      "status": "Approved ",
-      "address": "4610 17th St N.",
-      "zip": 22207,
-      "units": 6,
-      "unitType": "Multifamily ",
-      "zoningDistrict": "R-6"
-    },
-    "location": {
-      "latitude": -77.11844933348101,
-      "longitude": 38.891363837947516
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": "ZEHO23-00058 ",
-      "submissionDate": "11/02/2023 ",
-      "approvalDate": "12/22/2023 ",
-      "status": "Approved ",
+      "permitNumber": "ZEHO23-00058",
+      "submissionDate": "11/02/2023",
+      "approvalDate": "12/22/2023",
+      "status": "Approved",
       "address": "3014 7th St N.",
       "zip": 22201,
       "units": 3,
-      "unitType": "Townhouse ",
-      "zoningDistrict": " R-6"
+      "unitType": "Townhouse",
+      "zoningDistrict": "R-6"
     },
     "location": {
       "latitude": -77.09366029569696,
@@ -573,15 +774,15 @@
   },
   {
     "permit": {
-      "permitNumber": "ZEHO23-00059 ",
-      "submissionDate": "11/09/2023 ",
-      "approvalDate": "12/22/2023 ",
+      "permitNumber": "ZEHO23-00059",
+      "submissionDate": "11/09/2023",
+      "approvalDate": "12/22/2023",
       "status": "Approved",
-      "address": "735 N. George Mason Drive ",
+      "address": "735 N. George Mason Drive",
       "zip": 22203,
       "units": 3,
-      "unitType": "Townhouse ",
-      "zoningDistrict": " R-6"
+      "unitType": "Townhouse",
+      "zoningDistrict": "R-6"
     },
     "location": {
       "latitude": -77.1198915131058,
@@ -589,7 +790,7 @@
     },
     "assessment": {
       "address": "735 N GEORGE MASON DR",
-      "assessedValue2023": 833200,
+      "assessedValue2023": 828600,
       "taxDue": "$0.00",
       "taxPaymentStatus": "Paid",
       "lastSale": "2/24/2022"
@@ -597,219 +798,10 @@
   },
   {
     "permit": {
-      "permitNumber": "ZEHO23-00043",
-      "submissionDate": "7/26/2023",
-      "approvalDate": null,
-      "status": "First\nReview\nRejected\n[9/01/2023]",
-      "address": "1052 S. Edison Street ",
-      "zip": 22204,
-      "units": 6,
-      "unitType": "Multifamily",
-      "zoningDistrict": "R-6"
-    },
-    "location": {
-      "latitude": -77.11267893904684,
-      "longitude": 38.85300733627215
-    },
-    "assessment": {
-      "address": "1052 S EDISON ST",
-      "assessedValue2023": 672200,
-      "taxDue": "$0.00",
-      "taxPaymentStatus": "Paid",
-      "lastSale": "2/8/2022"
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": " ZEHO23-00027 ",
-      "submissionDate": "7/28/2023",
-      "approvalDate": null,
-      "status": "First\nReview\nRejected\n[8/21/2023]",
-      "address": "2108 S. Joyce Street",
-      "zip": 22202,
-      "units": 2,
-      "unitType": "Duplex",
-      "zoningDistrict": "R-5"
-    },
-    "location": {
-      "latitude": -77.06329248730268,
-      "longitude": 38.854661802028424
-    },
-    "assessment": {
-      "address": "2108 S JOYCE ST",
-      "assessedValue2023": 972100,
-      "taxDue": "$0.00",
-      "taxPaymentStatus": "Paid",
-      "lastSale": "11/21/2011"
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": " ZEHO23-00039",
-      "submissionDate": "7/13/2023",
-      "approvalDate": null,
-      "status": "First\nReview\nRejected\n[9/14/2023]",
-      "address": "900 20th St S",
-      "zip": 22202,
-      "units": 3,
-      "unitType": "Multifamily",
-      "zoningDistrict": "R-5"
-    },
-    "location": {
-      "latitude": -77.06150027586754,
-      "longitude": 38.85550892829733
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": " ZEHO23-00045",
-      "submissionDate": " 8/16/2023",
-      "approvalDate": null,
-      "status": "First\nReview\nRejected\n[9/20/2023]",
-      "address": "703 N. Barton Street",
-      "zip": 22201,
-      "units": 4,
-      "unitType": "Multifamily",
-      "zoningDistrict": "R-5"
-    },
-    "location": {
-      "latitude": -77.08723320915793,
-      "longitude": 38.88075161229324
-    },
-    "assessment": {
-      "address": "703 N BARTON ST",
-      "assessedValue2023": 1021800,
-      "taxDue": "$0.00",
-      "taxPaymentStatus": "Paid",
-      "lastSale": "6/1/2022"
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": " ZEHO23-00024 ",
-      "submissionDate": "8/25/2023",
-      "approvalDate": null,
-      "status": "**WITHDRAWN**\n10/16/2023",
-      "address": "12 S. Highland Street",
-      "zip": 22204,
-      "units": 2,
-      "unitType": "Duplex",
-      "zoningDistrict": "R-6"
-    },
-    "location": {
-      "latitude": -77.09193587104666,
-      "longitude": 38.87258477191245
-    },
-    "assessment": {
-      "address": "12 S HIGHLAND ST",
-      "assessedValue2023": 776700,
-      "taxDue": "$0.00",
-      "taxPaymentStatus": "Paid",
-      "lastSale": "4/11/2023"
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": " ZEHO23-00021",
-      "submissionDate": "8/16/2023",
-      "approvalDate": null,
-      "status": "First\nReview\nRejected\n[9/21/2023]",
-      "address": "432 N. Monroe Street",
-      "zip": 22201,
-      "units": 2,
-      "unitType": "Duplex",
-      "zoningDistrict": "R-6"
-    },
-    "location": {
-      "latitude": -77.10068319937405,
-      "longitude": 38.87660238723735
-    },
-    "assessment": {
-      "address": "432 N MONROE ST",
-      "assessedValue2023": 1078400,
-      "taxDue": "$0.00",
-      "taxPaymentStatus": "Paid",
-      "lastSale": "4/4/2012"
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": " ZEHO23-00050",
-      "submissionDate": "9/05/2023",
-      "approvalDate": null,
-      "status": "Second\nReview\nRejected\n[12/04/2023]",
-      "address": "3411 7th Street S.",
-      "zip": 22204,
-      "units": 4,
-      "unitType": "Multifamily",
-      "zoningDistrict": "R-5"
-    },
-    "location": {
-      "latitude": -77.0934969311431,
-      "longitude": 38.865658551720784
-    },
-    "assessment": {
-      "address": "3411 7th ST S",
-      "assessedValue2023": 921100,
-      "taxDue": "$0.00",
-      "taxPaymentStatus": "Paid",
-      "lastSale": "11/30/2021"
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": "ZEHO23-00052",
-      "submissionDate": "10/10/2023",
-      "approvalDate": null,
-      "status": "Under\nSecond\nReview\n[12/05/2023]",
-      "address": "1524 N. Randolph Street",
-      "zip": 22207,
-      "units": 2,
-      "unitType": "Duplex",
-      "zoningDistrict": "R-6"
-    },
-    "location": {
-      "latitude": -77.11040288522899,
-      "longitude": 38.88992823384846
-    },
-    "assessment": {
-      "address": "1524 N RANDOLPH ST",
-      "assessedValue2023": 1495400,
-      "taxDue": "$0.00",
-      "taxPaymentStatus": "Deferral",
-      "lastSale": "4/4/1989"
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": "ZEHO23-00051",
-      "submissionDate": "9/18/2023",
-      "approvalDate": null,
-      "status": "First\nReview\nRejected\n[11/27/2023]",
-      "address": "520 N.Garfield Street",
-      "zip": 22201,
-      "units": 3,
-      "unitType": "Multifamily",
-      "zoningDistrict": "R-6"
-    },
-    "location": {
-      "latitude": -77.09349671270246,
-      "longitude": 38.879722074284494
-    },
-    "assessment": {
-      "address": "520 N GARFIELD ST",
-      "assessedValue2023": 1274100,
-      "taxDue": "$0.00",
-      "taxPaymentStatus": "Paid",
-      "lastSale": "9/14/2020"
-    }
-  },
-  {
-    "permit": {
       "permitNumber": "ZEHO23-00060",
       "submissionDate": "11/21/2023",
       "approvalDate": null,
-      "status": "**DENIAL**\n[12/04/2023]\nLot ineligible for\nEHO development,\n per ACZO §10.4.2.A ",
+      "status": "**DENIAL**\n[12/04/2023]\nLot ineligible for\nEHO development,\n per ACZO §10.4.2.A",
       "address": "1922 N. Veitch Street",
       "zip": 22201,
       "units": 6,
@@ -854,6 +846,26 @@
   },
   {
     "permit": {
+      "permitNumber": "ZEHO23-00062",
+      "submissionDate": "12/08/2023",
+      "approvalDate": null,
+      "status": "Under Review",
+      "address": "1749 N. Edison Street",
+      "zip": 22207,
+      "units": 6,
+      "unitType": "Multifamily",
+      "zoningDistrict": "R-6"
+    },
+    "assessment": {
+      "address": "1749 N EDISON ST",
+      "assessedValue2023": 872600,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "10/2/2023"
+    }
+  },
+  {
+    "permit": {
       "permitNumber": "ZEHO23-00063",
       "submissionDate": "12/07/2023",
       "approvalDate": null,
@@ -878,36 +890,12 @@
       "address": "2316 John Marshall Dr.",
       "zip": 22205,
       "units": 2,
-      "unitType": "Semidetached ",
+      "unitType": "Semidetached",
       "zoningDistrict": "R-6"
     },
     "location": {
       "latitude": -77.14822446340185,
       "longitude": 38.89214007882389
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": "ZEHO23-00062 ",
-      "submissionDate": "12/08/2023 ",
-      "approvalDate": null,
-      "status": " Under Review",
-      "address": " 1749 N. Edison Street",
-      "zip": 22207,
-      "units": 6,
-      "unitType": "Multifamily",
-      "zoningDistrict": "R-6 "
-    },
-    "location": {
-      "latitude": -77.12666480273997,
-      "longitude": 38.890527441471235
-    },
-    "assessment": {
-      "address": "1749 N EDISON ST",
-      "assessedValue2023": 872600,
-      "taxDue": "$0.00",
-      "taxPaymentStatus": "Paid",
-      "lastSale": "10/2/2023"
     }
   }
 ]

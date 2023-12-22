@@ -16,30 +16,30 @@ export const getPermits = async () => {
     // get all the permits from the approved table
     Array.from(dom.window.document.querySelectorAll("table:nth-of-type(1) > tbody > tr")).slice(1).forEach(tr => {
         permits.push({
-            permitNumber: tr.children.item(0)!.textContent!,
-            submissionDate: tr.children.item(1)!.textContent!,
-            approvalDate: tr.children.item(2)!.textContent!,
-            status: tr.children.item(3)!.textContent!,
-            address: tr.children.item(4)!.textContent!,
-            zip: parseInt(tr.children.item(5)!.textContent!),
-            units: parseInt(tr.children.item(6)!.textContent!),
-            unitType: tr.children.item(7)!.textContent!,
-            zoningDistrict: tr.children.item(8)!.textContent!,
+            permitNumber: tr.children.item(0)!.textContent!.trim(),
+            submissionDate: tr.children.item(1)!.textContent!.trim(),
+            approvalDate: tr.children.item(2)!.textContent!.trim(),
+            status: tr.children.item(3)!.textContent!.trim(),
+            address: tr.children.item(4)!.textContent!.trim(),
+            zip: parseInt(tr.children.item(5)!.textContent!.trim()),
+            units: parseInt(tr.children.item(6)!.textContent!.trim()),
+            unitType: tr.children.item(7)!.textContent!.trim(),
+            zoningDistrict: tr.children.item(8)!.textContent!.trim(),
         })
     });
 
     // get all the permits from the under review table
     Array.from(dom.window.document.querySelectorAll("table:nth-of-type(3) > tbody > tr")).slice(1).forEach(tr => {
         permits.push({
-            permitNumber: tr.children.item(0)!.textContent!,
-            submissionDate: tr.children.item(1)!.textContent!,
+            permitNumber: tr.children.item(0)!.textContent!.trim(),
+            submissionDate: tr.children.item(1)!.textContent!.trim(),
             approvalDate: null,
-            status: tr.children.item(3)!.textContent!,
-            address: tr.children.item(4)!.textContent!,
-            zip: parseInt(tr.children.item(5)!.textContent!),
-            units: parseInt(tr.children.item(6)!.textContent!),
-            unitType: tr.children.item(7)!.textContent!,
-            zoningDistrict: tr.children.item(8)!.textContent!,
+            status: tr.children.item(3)!.textContent!.trim(),
+            address: tr.children.item(4)!.textContent!.trim(),
+            zip: parseInt(tr.children.item(5)!.textContent!.trim()),
+            units: parseInt(tr.children.item(6)!.textContent!.trim()),
+            unitType: tr.children.item(7)!.textContent!.trim(),
+            zoningDistrict: tr.children.item(8)!.textContent!.trim(),
         })
     });
 
@@ -64,5 +64,7 @@ for (const permit of scrapedPermits) {
         newPermits.push({permit: permit, location: undefined, assessment: undefined})
     }
 }
+
+newPermits.sort((left, right) => left.permit.permitNumber > right.permit.permitNumber ? 1 : -1);
 
 await fs.writeFile('./src/data/permits.json', JSON.stringify(newPermits, null, 2), 'utf8');

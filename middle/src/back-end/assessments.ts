@@ -30,11 +30,11 @@ const getAssessment = async (streetNumber?: string, streetName?: string, directi
     // assert we have two trs: one for the headers and one for the data
     const assessments: Assessment[] = rows.map(tr => {
         return {
-            address: tr.children.item(2)!.textContent!,
-            assessedValue2023: parseFloat(tr.children.item(3)!.textContent!.replace("$", "").replaceAll(",", "")!),
-            taxDue: tr.children.item(4)!.textContent!,
-            taxPaymentStatus: tr.children.item(5)!.textContent!,
-            lastSale: tr.children.item(6)!.textContent!
+            address: tr.children.item(2)!.textContent!.trim(),
+            assessedValue2023: parseFloat(tr.children.item(3)!.textContent!.replace("$", "").replaceAll(",", "")!.trim()),
+            taxDue: tr.children.item(4)!.textContent!.trim(),
+            taxPaymentStatus: tr.children.item(5)!.textContent!.trim(),
+            lastSale: tr.children.item(6)!.textContent!.trim()
         }
     })
     return assessments;
@@ -79,6 +79,8 @@ for (const permit of permits) {
         newPermits.push(permit);
     }
 }
+
+newPermits.sort((left, right) => left.permit.permitNumber > right.permit.permitNumber ? 1 : -1);
 
 await fs.writeFile('./src/data/permits.json', JSON.stringify(newPermits, null, 2), 'utf8');
 

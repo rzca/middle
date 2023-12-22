@@ -59,4 +59,6 @@ for (const permit of permits) {
     }
 }
 
+newPermits.sort((left, right) => left.permit.permitNumber > right.permit.permitNumber ? 1 : -1);
+
 await fs.writeFile('./src/data/permits.json', JSON.stringify(newPermits, null, 2), 'utf8');
