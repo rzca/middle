@@ -539,6 +539,64 @@
   },
   {
     "permit": {
+      "permitNumber": "ZEHO23-00055 ",
+      "submissionDate": "10/12/2023 ",
+      "approvalDate": "12/22/2023 ",
+      "status": "Approved ",
+      "address": "4610 17th St N.",
+      "zip": 22207,
+      "units": 6,
+      "unitType": "Multifamily ",
+      "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.11844933348101,
+      "longitude": 38.891363837947516
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00058 ",
+      "submissionDate": "11/02/2023 ",
+      "approvalDate": "12/22/2023 ",
+      "status": "Approved ",
+      "address": "3014 7th St N.",
+      "zip": 22201,
+      "units": 3,
+      "unitType": "Townhouse ",
+      "zoningDistrict": " R-6"
+    },
+    "location": {
+      "latitude": -77.09366029569696,
+      "longitude": 38.88091583582789
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00059 ",
+      "submissionDate": "11/09/2023 ",
+      "approvalDate": "12/22/2023 ",
+      "status": "Approved",
+      "address": "735 N. George Mason Drive ",
+      "zip": 22203,
+      "units": 3,
+      "unitType": "Townhouse ",
+      "zoningDistrict": " R-6"
+    },
+    "location": {
+      "latitude": -77.1198915131058,
+      "longitude": 38.87709758213202
+    },
+    "assessment": {
+      "address": "735 N GEORGE MASON DR",
+      "assessedValue2023": 833200,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "2/24/2022"
+    }
+  },
+  {
+    "permit": {
       "permitNumber": "ZEHO23-00043",
       "submissionDate": "7/26/2023",
       "approvalDate": null,
@@ -724,54 +782,6 @@
   },
   {
     "permit": {
-      "permitNumber": "ZEHO23-00055",
-      "submissionDate": "10/12/2023",
-      "approvalDate": null,
-      "status": "Under\nSecond\nReview\n[11/28/2023]",
-      "address": "4610 17th Street N.",
-      "zip": 22207,
-      "units": 6,
-      "unitType": "Multifamily",
-      "zoningDistrict": "R-6"
-    },
-    "location": {
-      "latitude": -77.11844933348101,
-      "longitude": 38.891363837947516
-    },
-    "assessment": {
-      "address": "4610 17th ST N",
-      "assessedValue2023": 957200,
-      "taxDue": "$0.00",
-      "taxPaymentStatus": "Paid",
-      "lastSale": "8/30/2022"
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": "ZEHO23-00058",
-      "submissionDate": "11/02/2023",
-      "approvalDate": null,
-      "status": "Under\nSecond\nReview\n[12/06/2023]",
-      "address": "3014 7th Street N.",
-      "zip": 22201,
-      "units": 3,
-      "unitType": "Townhouse",
-      "zoningDistrict": "R-6"
-    },
-    "location": {
-      "latitude": -77.09366029569696,
-      "longitude": 38.88091583582789
-    },
-    "assessment": {
-      "address": "3014 7th ST N",
-      "assessedValue2023": 2393300,
-      "taxDue": "$0.00",
-      "taxPaymentStatus": "Paid",
-      "lastSale": "9/27/2023"
-    }
-  },
-  {
-    "permit": {
       "permitNumber": "ZEHO23-00051",
       "submissionDate": "9/18/2023",
       "approvalDate": null,
@@ -792,23 +802,6 @@
       "taxDue": "$0.00",
       "taxPaymentStatus": "Paid",
       "lastSale": "9/14/2020"
-    }
-  },
-  {
-    "permit": {
-      "permitNumber": "ZEHO23-00059",
-      "submissionDate": "11/09/2023",
-      "approvalDate": null,
-      "status": "Under\nReview",
-      "address": "735 N. George Mason Dr. ",
-      "zip": 22203,
-      "units": 3,
-      "unitType": "Townhouse",
-      "zoningDistrict": "R-6"
-    },
-    "location": {
-      "latitude": -77.1198915131058,
-      "longitude": 38.87709758213202
     }
   },
   {
@@ -865,15 +858,15 @@
       "submissionDate": "12/07/2023",
       "approvalDate": null,
       "status": "Under\nReview",
-      "address": "5104 14th Steet N.",
+      "address": "5104 14th Street N.",
       "zip": 22205,
       "units": 3,
       "unitType": "Townhouse",
       "zoningDistrict": "R-6"
     },
     "location": {
-      "latitude": -77.12499073148112,
-      "longitude": 38.88603338610894
+      "latitude": -77.1249644816644,
+      "longitude": 38.886152048303046
     }
   },
   {
@@ -891,6 +884,30 @@
     "location": {
       "latitude": -77.14822446340185,
       "longitude": 38.89214007882389
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO23-00062 ",
+      "submissionDate": "12/08/2023 ",
+      "approvalDate": null,
+      "status": " Under Review",
+      "address": " 1749 N. Edison Street",
+      "zip": 22207,
+      "units": 6,
+      "unitType": "Multifamily",
+      "zoningDistrict": "R-6 "
+    },
+    "location": {
+      "latitude": -77.12666480273997,
+      "longitude": 38.890527441471235
+    },
+    "assessment": {
+      "address": "1749 N EDISON ST",
+      "assessedValue2023": 872600,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "Paid",
+      "lastSale": "10/2/2023"
     }
   }
 ]
