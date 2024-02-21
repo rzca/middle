@@ -224,7 +224,7 @@ export const App = () => {
                   <tr>
                     <th>Address</th>
                     <th>Units</th>
-                    <th>Assessed value in 2023</th>
+                    <th>Assessed value in 2024</th>
                     <th>{"Submission date [Approval date]"}</th>
                     <th>Zoning District</th>
                     <th>Permit number</th>

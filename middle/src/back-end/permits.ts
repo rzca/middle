@@ -7,7 +7,26 @@ import { default as fs } from "fs/promises";
 export const getPermits = async () => {
     const permits: Permit[] = [];
 
-    const text = await fetch("https://www.arlingtonva.us/Government/Programs/Building/Permits/EHO/Tracker")
+    const text = await fetch("https://www.arlingtonva.us/Government/Programs/Building/Permits/EHO/Tracker", {
+        "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-language": "en-US,en;q=0.9",
+            "cache-control": "max-age=0",
+            "sec-ch-ua": "\"Not_A Brand\";v=\"8\", \"Chromium\";v=\"120\", \"Google Chrome\";v=\"120\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"macOS\"",
+            "sec-fetch-dest": "document",
+            "sec-fetch-mode": "navigate",
+            "sec-fetch-site": "none",
+            "sec-fetch-user": "?1",
+            "upgrade-insecure-requests": "1"
+        },
+        "referrerPolicy": "strict-origin-when-cross-origin",
+        "body": null,
+        "method": "GET",
+        "mode": "cors",
+        "credentials": "include"
+    })
         .then(res => res.blob())
         .then(blob => blob.text());
 
@@ -55,13 +74,13 @@ for (const permit of scrapedPermits) {
     // if the permit already exists, replace the permit object with the new one but keep existing geocodes and assessments
     if (existingPermits.length == 1) {
         const existingPermit = existingPermits[0];
-        newPermits.push({permit: permit, location: existingPermit.location, assessment: existingPermit.assessment})
+        newPermits.push({ permit: permit, location: existingPermit.location, assessment: existingPermit.assessment })
     }
 
     // if it does not exist, 
     if (!permits.map(p => p.permit.address).includes(permit.address)) {
         console.log("new permit!", permit);
-        newPermits.push({permit: permit, location: undefined, assessment: undefined})
+        newPermits.push({ permit: permit, location: undefined, assessment: undefined })
     }
 }
 

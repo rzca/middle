@@ -8,9 +8,9 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "assessments": "ts-node --esm ./src/back-end/assessments.ts",
-    "geocodes": "ts-node --esm ./src/back-end/geocodes.ts",
-    "permits": "ts-node --esm ./src/back-end/permits.ts"
+    "assessments": "tsx ./src/back-end/assessments.ts",
+    "geocodes": "tsx ./src/back-end/geocodes.ts",
+    "permits": "tsx ./src/back-end/permits.ts"
   },
   "dependencies": {
     "@blueprintjs/core": "^5.7.2",
@@ -36,6 +36,7 @@
     "eslint": "^8.53.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",
+    "tsx": "^4.7.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.0"
   }
