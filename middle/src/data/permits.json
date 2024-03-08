@@ -213,6 +213,30 @@
   },
   {
     "permit": {
+      "permitNumber": "ZEHO23-00020",
+      "submissionDate": "7/06/2023",
+      "approvalDate": "8/30/2023",
+      "status": "Approved",
+      "address": "735 N. George Mason Drive",
+      "zip": 22203,
+      "units": 6,
+      "unitType": "Multifamily",
+      "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.1198915131058,
+      "longitude": 38.87709758213202
+    },
+    "assessment": {
+      "address": "735 N GEORGE MASON DR",
+      "assessedValue2023": 833200,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "2024 Not Avail",
+      "lastSale": "2/24/2022"
+    }
+  },
+  {
+    "permit": {
       "permitNumber": "ZEHO23-00021",
       "submissionDate": "8/16/2023",
       "approvalDate": null,
@@ -427,9 +451,9 @@
     "permit": {
       "permitNumber": "ZEHO23-00040",
       "submissionDate": "7/14/2023",
-      "approvalDate": "10/12/2023",
-      "status": "Approved",
-      "address": "5630 8th Street N.",
+      "approvalDate": null,
+      "status": "Third\nReview\nRejected\n[2/20/2024]",
+      "address": "5630 8th St N",
       "zip": 22205,
       "units": 5,
       "unitType": "Multifamily",
@@ -695,6 +719,30 @@
   },
   {
     "permit": {
+      "permitNumber": "ZEHO23-00059",
+      "submissionDate": "11/09/2023",
+      "approvalDate": "12/22/2023",
+      "status": "Approved",
+      "address": "735 N. George Mason Drive",
+      "zip": 22203,
+      "units": 3,
+      "unitType": "Townhouse",
+      "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.1198915131058,
+      "longitude": 38.87709758213202
+    },
+    "assessment": {
+      "address": "735 N GEORGE MASON DR",
+      "assessedValue2023": 833200,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "2024 Not Avail",
+      "lastSale": "2/24/2022"
+    }
+  },
+  {
+    "permit": {
       "permitNumber": "ZEHO23-00060",
       "submissionDate": "11/21/2023",
       "approvalDate": null,
@@ -769,8 +817,8 @@
     "permit": {
       "permitNumber": "ZEHO23-00063",
       "submissionDate": "12/07/2023",
-      "approvalDate": null,
-      "status": "Under\nThird\nReview\n[1/25/2024]",
+      "approvalDate": "3/01/2024",
+      "status": "Approved",
       "address": "5104 14th Street N.",
       "zip": 22205,
       "units": 3,
@@ -836,10 +884,10 @@
   {
     "permit": {
       "permitNumber": "ZEHO23-00067",
-      "submissionDate": "12/29/2023",
-      "approvalDate": null,
-      "status": "Under\nSecond\nReview\n[1/25/2024]",
-      "address": "1225 N. Quincy Street",
+      "submissionDate": "12/28/2023",
+      "approvalDate": "2/27/2024",
+      "status": "Approved",
+      "address": "1225 N Quincy Street",
       "zip": 22201,
       "units": 3,
       "unitType": "Townhouse",
@@ -848,13 +896,6 @@
     "location": {
       "latitude": -77.10812398091687,
       "longitude": 38.886432087171485
-    },
-    "assessment": {
-      "address": "1225 N QUINCY ST",
-      "assessedValue2023": 973700,
-      "taxDue": "$0.00",
-      "taxPaymentStatus": "2024 Not Avail",
-      "lastSale": "11/20/2015"
     }
   },
   {
@@ -879,7 +920,7 @@
       "permitNumber": "ZEHO24-00003",
       "submissionDate": "1/26/2024",
       "approvalDate": null,
-      "status": "First\nReview\nRejected\n[2/13/2024]",
+      "status": "Under\nSecond\nReview\n[2/28/2024]",
       "address": "2315 N. Tuckahoe Street",
       "zip": 22205,
       "units": 6,
@@ -896,6 +937,30 @@
       "taxDue": "$0.00",
       "taxPaymentStatus": "2024 Not Avail",
       "lastSale": "10/27/2023"
+    }
+  },
+  {
+    "permit": {
+      "permitNumber": "ZEHO24-00004",
+      "submissionDate": "3/05/2024",
+      "approvalDate": null,
+      "status": "Under\nReview",
+      "address": "2405 N. Potomac Street",
+      "zip": 22207,
+      "units": 3,
+      "unitType": "Townhouse",
+      "zoningDistrict": "R-6"
+    },
+    "location": {
+      "latitude": -77.15191614418072,
+      "longitude": 38.89282289744725
+    },
+    "assessment": {
+      "address": "2405 N POTOMAC ST",
+      "assessedValue2023": 451400,
+      "taxDue": "$0.00",
+      "taxPaymentStatus": "2024 Not Avail",
+      "lastSale": "10/13/2023"
     }
   }
 ]

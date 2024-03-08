@@ -7,6 +7,7 @@ import {
   TileLayer,
   GeoJSON,
   LayersControl,
+  FeatureGroup,
 } from "react-leaflet";
 import "./App.css";
 
@@ -56,20 +57,20 @@ type Feature = {
 };
 
 const getColor = (znDesignation: string) => {
-  if (znDesignation == "R-6") return Colors.BLUE1;
-  if (znDesignation == "R-5") return Colors.ORANGE1;
-  if (znDesignation == "R-8") return Colors.FOREST1;
-  if (znDesignation == "R-10") return Colors.FOREST2;
-  if (znDesignation == "R-20") return Colors.FOREST3;
+  if (znDesignation == "R-6") return Colors.RED1;
+  // if (znDesignation == "R-5") return Colors.RED2;
+  if (znDesignation == "R-8") return Colors.RED3;
+  if (znDesignation == "R-10") return Colors.RED4;
+  if (znDesignation == "R-20") return Colors.RED5;
   return Colors.VIOLET1;
 };
 
 const initialZones = {
-  ["R-5"]: "One-Family, Restricted Two Family Dwelling District",
   ["R-6"]: "One-Family Dwelling District",
   ["R-8"]: "One-Family Dwelling District",
   ["R-10"]: "One-Family Dwelling District",
   ["R-20"]: "One-Family Dwelling District",
+  ["R-5"]: "One-Family, Restricted Two Family Dwelling District",
   ["R-10T"]: "One Family Residential-Town-House Dwelling District",
   ["R15-30T"]: "Residential Town House Dwelling District",
   ["R2-7"]: "Two-Family and Town House Dwelling District",
@@ -90,12 +91,6 @@ const ZoneFeatureLayer = (props: { znDesig: string; color?: string }) => {
       style={(_: Feature) => {
         return { color: props.color ?? getColor(props.znDesig) };
       }}
-      // onEachFeature={(feature: Feature) => {
-      //   // zns[feature.properties.ZN_DESIG] = feature.properties.LABEL;
-      //   setZnDesignations(prev => {
-      //     return ({ ...prev, [feature.properties.ZN_DESIG]: feature.properties.LABEL })
-      //   });
-      // }}
     />
   );
 };
@@ -133,10 +128,27 @@ export const App = () => {
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          // url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          // url="https://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
+          url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png  "
         />
-
-        {permits
+        <LayersControl position={"topright"}>
+          {Object.entries(znDesignations).map((entry) => {
+            return (
+              <LayersControl.Overlay checked name={entry[0]} key={entry[0]}>
+                <ZoneFeatureLayer znDesig={entry[0]} />
+              </LayersControl.Overlay>
+            );
+          })}
+          <LayersControl.Overlay
+            name="Arlington County"
+            key={"Arlington County"}
+          >
+            <GeoJSON data={arlington2}></GeoJSON>
+          </LayersControl.Overlay>
+          <LayersControl.Overlay checked name={"EHO Permits"} key={"EHO Permits"}>
+            <FeatureGroup>
+            {permits
           .filter((p) => p.location != null)
           .map((p) => {
             return (
@@ -168,19 +180,8 @@ export const App = () => {
               </Marker>
             );
           })}
-        <LayersControl position={"topright"}>
-          {Object.entries(znDesignations).map((entry) => {
-            return (
-              <LayersControl.Overlay checked name={entry[0]} key={entry[0]}>
-                <ZoneFeatureLayer znDesig={entry[0]} />
-              </LayersControl.Overlay>
-            );
-          })}
-          <LayersControl.Overlay
-            name="Arlington County"
-            key={"Arlington County"}
-          >
-            <GeoJSON data={arlington2}></GeoJSON>
+            </FeatureGroup>
+          
           </LayersControl.Overlay>
         </LayersControl>
       </MapContainer>
